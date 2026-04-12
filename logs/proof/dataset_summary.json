@@ -1,0 +1,47 @@
+{
+  "by_attack_type": {
+    "encoding": 14,
+    "none": 600,
+    "obfuscation": 187,
+    "reasoning": 2072,
+    "roleplay": 726
+  },
+  "by_difficulty": {
+    "easy": 3009,
+    "hard": 324,
+    "medium": 266
+  },
+  "by_source_dataset": {
+    "AdvBench": 520,
+    "HarmBench": 391,
+    "JailbreakBench": 189,
+    "JailbreakDB-Jailbreak": 12,
+    "JailbreakDB-Regular": 500,
+    "JailbreakV-28K": 1687,
+    "JailbreakV-28K-RedTeam": 300
+  },
+  "by_type": {
+    "jailbreak": 2999,
+    "safe": 600
+  },
+  "gpt4_success_labels_present": 0,
+  "llama_success_labels_present": 0,
+  "path": "data/processed/gjb_real_v1.jsonl",
+  "prompt_text_logged": false,
+  "rows": 3599,
+  "safe_subgroups": {
+    "disinformation": 10,
+    "economic_harm": 10,
+    "expert_advice": 10,
+    "fraud_deception": 10,
+    "government_decision_making": 10,
+    "harassment_discrimination": 10,
+    "jailbreakdb_regular": 500,
+    "malware_hacking": 10,
+    "physical_harm": 10,
+    "privacy": 10,
+    "sexual_adult_content": 10
+  },
+  "sha256": "9abb81efb22e9bb7e942b9f02d73422487fa2d05b8b779cc6675c83a6106bf11",
+  "synthetic_source_rows": 0
+}

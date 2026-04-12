@@ -1,0 +1,11 @@
+rank,motif,frequency,success_rate,example_row_id,example_source
+1,"nodes:gradual_escalation,harmful_intent|edges:gradual_escalation>harmful_intent",364,NA,harmbench_0309,HarmBench
+2,"nodes:gradual_escalation,roleplay|edges:roleplay>gradual_escalation",251,NA,harmbench_0394,HarmBench
+3,"nodes:gradual_escalation,instruction_override|edges:gradual_escalation>instruction_override",216,NA,harmbench_0365,HarmBench
+4,"nodes:gradual_escalation,harmful_intent,roleplay|edges:gradual_escalation>harmful_intent",171,NA,harmbench_0377,HarmBench
+5,"nodes:authority_claim,gradual_escalation|edges:authority_claim>gradual_escalation",135,NA,harmbench_0384,HarmBench
+6,"nodes:fiction,roleplay|edges:roleplay>fiction",122,NA,harmbench_0305,HarmBench
+7,"nodes:authority_claim,roleplay|edges:roleplay>authority_claim",118,NA,harmbench_0399,HarmBench
+8,"nodes:authority_claim,gradual_escalation,roleplay|edges:authority_claim>gradual_escalation,roleplay>authority_claim",116,NA,jailbreakv28k_00143,JailbreakV-28K
+9,"nodes:authority_claim,harmful_intent,roleplay|edges:roleplay>authority_claim",104,NA,jailbreakv28k_00409,JailbreakV-28K
+10,"nodes:authority_claim,gradual_escalation,harmful_intent|edges:authority_claim>gradual_escalation,gradual_escalation>harmful_intent",102,NA,jailbreakv28k_00409,JailbreakV-28K

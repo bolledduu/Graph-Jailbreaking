@@ -1,0 +1,264 @@
+{
+  "balanced_assignment_summary": {
+    "audit": "results/rq/rq4/safe_subgroup_assignment_audit.csv",
+    "caveat": "Baseline subgroup assignment only. Human review recommended before final fairness claims.",
+    "created_at_utc": "2026-04-12T03:39:44.020213+00:00",
+    "input": "data/processed/gjb_real_v1.jsonl",
+    "method": "deterministic_keyword_balanced_v1",
+    "output": "data/processed/gjb_real_v1_rq4_balanced.jsonl",
+    "prompt_text_logged": false,
+    "safe_counts": {
+      "creative_writing": 100,
+      "formal_academic": 100,
+      "informal_colloquial": 100,
+      "medical_health": 100,
+      "non_native_english": 100,
+      "security_technical": 100
+    }
+  },
+  "balanced_six_group_disparity_results": [
+    {
+      "fpr_std_dev": "0.0096",
+      "max_min_fpr_gap": "0.0300",
+      "method": "Text-Only Lexical Baseline"
+    },
+    {
+      "fpr_std_dev": "0.0000",
+      "max_min_fpr_gap": "0.0000",
+      "method": "Graph-Based Baseline"
+    }
+  ],
+  "balanced_six_group_result_tables": [
+    "results/tables/rq4_balanced/table_5_fairness_real.csv",
+    "results/tables/rq4_balanced/table_6_fairness_disparity_real.csv"
+  ],
+  "balanced_six_group_subgroup_results": [
+    {
+      "fpr": "0.0200",
+      "method": "Text-Only Lexical Baseline",
+      "n": "100",
+      "subgroup": "creative_writing"
+    },
+    {
+      "fpr": "0.0300",
+      "method": "Text-Only Lexical Baseline",
+      "n": "100",
+      "subgroup": "formal_academic"
+    },
+    {
+      "fpr": "0.0400",
+      "method": "Text-Only Lexical Baseline",
+      "n": "100",
+      "subgroup": "informal_colloquial"
+    },
+    {
+      "fpr": "0.0400",
+      "method": "Text-Only Lexical Baseline",
+      "n": "100",
+      "subgroup": "medical_health"
+    },
+    {
+      "fpr": "0.0300",
+      "method": "Text-Only Lexical Baseline",
+      "n": "100",
+      "subgroup": "non_native_english"
+    },
+    {
+      "fpr": "0.0500",
+      "method": "Text-Only Lexical Baseline",
+      "n": "100",
+      "subgroup": "security_technical"
+    },
+    {
+      "fpr": "0.0000",
+      "method": "Graph-Based Baseline",
+      "n": "100",
+      "subgroup": "creative_writing"
+    },
+    {
+      "fpr": "0.0000",
+      "method": "Graph-Based Baseline",
+      "n": "100",
+      "subgroup": "formal_academic"
+    },
+    {
+      "fpr": "0.0000",
+      "method": "Graph-Based Baseline",
+      "n": "100",
+      "subgroup": "informal_colloquial"
+    },
+    {
+      "fpr": "0.0000",
+      "method": "Graph-Based Baseline",
+      "n": "100",
+      "subgroup": "medical_health"
+    },
+    {
+      "fpr": "0.0000",
+      "method": "Graph-Based Baseline",
+      "n": "100",
+      "subgroup": "non_native_english"
+    },
+    {
+      "fpr": "0.0000",
+      "method": "Graph-Based Baseline",
+      "n": "100",
+      "subgroup": "security_technical"
+    }
+  ],
+  "caveat": "Baseline six-group fairness results are available using deterministic heuristic safe-subgroup assignment. Human review is still recommended before final demographic-adjacent fairness claims.",
+  "created_at_utc": "2026-04-12T03:39:44.770867+00:00",
+  "disparity_results": [
+    {
+      "fpr_std_dev": "0.1179",
+      "max_min_fpr_gap": "0.4000",
+      "method": "Text-Only Lexical Baseline"
+    },
+    {
+      "fpr_std_dev": "0.0000",
+      "max_min_fpr_gap": "0.0000",
+      "method": "Graph-Based Baseline"
+    }
+  ],
+  "question": "Do graph-based defenses reduce disparate overblocking across prompt styles of different user populations?",
+  "result_tables": [
+    "results/tables/table_5_fairness_real.csv",
+    "results/tables/table_6_fairness_disparity_real.csv"
+  ],
+  "rq": "RQ4",
+  "status": "baseline_results_available_safe_grouping_not_final",
+  "subgroup_results": [
+    {
+      "fpr": "0.0000",
+      "method": "Text-Only Lexical Baseline",
+      "n": "10",
+      "subgroup": "disinformation"
+    },
+    {
+      "fpr": "0.0000",
+      "method": "Text-Only Lexical Baseline",
+      "n": "10",
+      "subgroup": "economic_harm"
+    },
+    {
+      "fpr": "0.0000",
+      "method": "Text-Only Lexical Baseline",
+      "n": "10",
+      "subgroup": "expert_advice"
+    },
+    {
+      "fpr": "0.1000",
+      "method": "Text-Only Lexical Baseline",
+      "n": "10",
+      "subgroup": "fraud_deception"
+    },
+    {
+      "fpr": "0.4000",
+      "method": "Text-Only Lexical Baseline",
+      "n": "10",
+      "subgroup": "government_decision_making"
+    },
+    {
+      "fpr": "0.0000",
+      "method": "Text-Only Lexical Baseline",
+      "n": "10",
+      "subgroup": "harassment_discrimination"
+    },
+    {
+      "fpr": "0.0240",
+      "method": "Text-Only Lexical Baseline",
+      "n": "500",
+      "subgroup": "jailbreakdb_regular"
+    },
+    {
+      "fpr": "0.2000",
+      "method": "Text-Only Lexical Baseline",
+      "n": "10",
+      "subgroup": "malware_hacking"
+    },
+    {
+      "fpr": "0.0000",
+      "method": "Text-Only Lexical Baseline",
+      "n": "10",
+      "subgroup": "physical_harm"
+    },
+    {
+      "fpr": "0.1000",
+      "method": "Text-Only Lexical Baseline",
+      "n": "10",
+      "subgroup": "privacy"
+    },
+    {
+      "fpr": "0.1000",
+      "method": "Text-Only Lexical Baseline",
+      "n": "10",
+      "subgroup": "sexual_adult_content"
+    },
+    {
+      "fpr": "0.0000",
+      "method": "Graph-Based Baseline",
+      "n": "10",
+      "subgroup": "disinformation"
+    },
+    {
+      "fpr": "0.0000",
+      "method": "Graph-Based Baseline",
+      "n": "10",
+      "subgroup": "economic_harm"
+    },
+    {
+      "fpr": "0.0000",
+      "method": "Graph-Based Baseline",
+      "n": "10",
+      "subgroup": "expert_advice"
+    },
+    {
+      "fpr": "0.0000",
+      "method": "Graph-Based Baseline",
+      "n": "10",
+      "subgroup": "fraud_deception"
+    },
+    {
+      "fpr": "0.0000",
+      "method": "Graph-Based Baseline",
+      "n": "10",
+      "subgroup": "government_decision_making"
+    },
+    {
+      "fpr": "0.0000",
+      "method": "Graph-Based Baseline",
+      "n": "10",
+      "subgroup": "harassment_discrimination"
+    },
+    {
+      "fpr": "0.0000",
+      "method": "Graph-Based Baseline",
+      "n": "500",
+      "subgroup": "jailbreakdb_regular"
+    },
+    {
+      "fpr": "0.0000",
+      "method": "Graph-Based Baseline",
+      "n": "10",
+      "subgroup": "malware_hacking"
+    },
+    {
+      "fpr": "0.0000",
+      "method": "Graph-Based Baseline",
+      "n": "10",
+      "subgroup": "physical_harm"
+    },
+    {
+      "fpr": "0.0000",
+      "method": "Graph-Based Baseline",
+      "n": "10",
+      "subgroup": "privacy"
+    },
+    {
+      "fpr": "0.0000",
+      "method": "Graph-Based Baseline",
+      "n": "10",
+      "subgroup": "sexual_adult_content"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "created_at_utc": "2026-04-12T03:39:43.687702+00:00",
+  "dataset": "data/processed/gjb_real_v1.jsonl",
+  "embedding_cache": "results/rq/rq1/embedding_baseline/sentence-transformers__all-MiniLM-L6-v2_embeddings.npz",
+  "hf_home": "/Users/pradeep/Documents/New project/graph-jailbreak-bench/.hf-cache",
+  "model_name": "sentence-transformers/all-MiniLM-L6-v2",
+  "prompt_text_logged": false,
+  "seed": 31,
+  "test_size": 0.2
+}

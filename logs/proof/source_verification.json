@@ -1,0 +1,102 @@
+{
+  "all_sources_verified": true,
+  "manifest_path": "configs/data_sources.json",
+  "sources": [
+    {
+      "actual_rows": 520,
+      "actual_sha256": "6cd1a5c63c07610d7eb67307772ee5606017ee950b5770ab288a2c487489d3e1",
+      "exists": true,
+      "expected_rows": 520,
+      "expected_sha256": "6cd1a5c63c07610d7eb67307772ee5606017ee950b5770ab288a2c487489d3e1",
+      "local_path": "data/raw/advbench/harmful_behaviors.csv",
+      "name": "AdvBench",
+      "rows_match": true,
+      "sha256_match": true,
+      "url": "https://raw.githubusercontent.com/llm-attacks/llm-attacks/main/data/advbench/harmful_behaviors.csv"
+    },
+    {
+      "actual_rows": 100,
+      "actual_sha256": "4a8ec6832056b631eb092dccc60d37a61c3d441268268888b3d006288afeffa1",
+      "exists": true,
+      "expected_rows": 100,
+      "expected_sha256": "4a8ec6832056b631eb092dccc60d37a61c3d441268268888b3d006288afeffa1",
+      "local_path": "data/raw/jailbreakbench/harmful-behaviors.csv",
+      "name": "JailbreakBench harmful behaviors",
+      "rows_match": true,
+      "sha256_match": true,
+      "url": "https://huggingface.co/datasets/JailbreakBench/JBB-Behaviors/resolve/main/data/harmful-behaviors.csv"
+    },
+    {
+      "actual_rows": 100,
+      "actual_sha256": "3cda234d21a991fa309bbfea4b6d9dae31ccdf8e9d452424b6a983e4fdc33468",
+      "exists": true,
+      "expected_rows": 100,
+      "expected_sha256": "3cda234d21a991fa309bbfea4b6d9dae31ccdf8e9d452424b6a983e4fdc33468",
+      "local_path": "data/raw/jailbreakbench/benign-behaviors.csv",
+      "name": "JailbreakBench benign behaviors",
+      "rows_match": true,
+      "sha256_match": true,
+      "url": "https://huggingface.co/datasets/JailbreakBench/JBB-Behaviors/resolve/main/data/benign-behaviors.csv"
+    },
+    {
+      "actual_rows": 400,
+      "actual_sha256": "8d81accedd38eaaf8b760618622bb888417d1fd0c86eba65c427a16f1cbb4afc",
+      "exists": true,
+      "expected_rows": 400,
+      "expected_sha256": "8d81accedd38eaaf8b760618622bb888417d1fd0c86eba65c427a16f1cbb4afc",
+      "local_path": "data/raw/harmbench/harmbench_behaviors_text_all.csv",
+      "name": "HarmBench text behaviors",
+      "rows_match": true,
+      "sha256_match": true,
+      "url": "https://raw.githubusercontent.com/centerforaisafety/HarmBench/main/data/behavior_datasets/harmbench_behaviors_text_all.csv"
+    },
+    {
+      "actual_rows": 28000,
+      "actual_sha256": "72fb8beb9eb1c1a23745f4bd56430da9dff36ba42c6f5d699e68a47e14fc87c5",
+      "exists": true,
+      "expected_rows": 28000,
+      "expected_sha256": "72fb8beb9eb1c1a23745f4bd56430da9dff36ba42c6f5d699e68a47e14fc87c5",
+      "local_path": "data/raw/jailbreakv_28k/JailBreakV_28K.csv",
+      "name": "JailbreakV-28K full CSV",
+      "rows_match": true,
+      "sha256_match": true,
+      "url": "https://huggingface.co/datasets/JailbreakV-28K/JailBreakV-28k/resolve/main/JailBreakV_28K/JailBreakV_28K.csv"
+    },
+    {
+      "actual_rows": 2000,
+      "actual_sha256": "e15c65d423db8719f9c21521dc8531b52bc6b4906e79eadbe367c9f4b10e8858",
+      "exists": true,
+      "expected_rows": 2000,
+      "expected_sha256": "e15c65d423db8719f9c21521dc8531b52bc6b4906e79eadbe367c9f4b10e8858",
+      "local_path": "data/raw/jailbreakv_28k/RedTeam_2K.csv",
+      "name": "JailbreakV-28K RedTeam CSV",
+      "rows_match": true,
+      "sha256_match": true,
+      "url": "https://huggingface.co/datasets/JailbreakV-28K/JailBreakV-28k/resolve/main/JailBreakV_28K/RedTeam_2K.csv"
+    },
+    {
+      "actual_rows": 445752,
+      "actual_sha256": "fac95fd66e1c1669f0ed673018dd8ba22bab422c9b4663f92faf4912892e6885",
+      "exists": true,
+      "expected_rows": 445752,
+      "expected_sha256": "fac95fd66e1c1669f0ed673018dd8ba22bab422c9b4663f92faf4912892e6885",
+      "local_path": "data/raw/jailbreakdb/text_jailbreak_unique.csv",
+      "name": "JailbreakDB jailbreak unique",
+      "rows_match": true,
+      "sha256_match": true,
+      "url": "https://huggingface.co/datasets/youbin2014/JailbreakDB/resolve/main/text_jailbreak_unique.csv"
+    },
+    {
+      "actual_rows": 1094122,
+      "actual_sha256": "868f3cb83ca060eeada1200779f36c76ff2eba79fae0540086f4305d6c3945e1",
+      "exists": true,
+      "expected_rows": 1094122,
+      "expected_sha256": "868f3cb83ca060eeada1200779f36c76ff2eba79fae0540086f4305d6c3945e1",
+      "local_path": "data/raw/jailbreakdb/text_regular_unique.csv",
+      "name": "JailbreakDB regular unique",
+      "rows_match": true,
+      "sha256_match": true,
+      "url": "https://huggingface.co/datasets/youbin2014/JailbreakDB/resolve/main/text_regular_unique.csv"
+    }
+  ]
+}

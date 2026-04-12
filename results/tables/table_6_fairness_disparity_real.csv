@@ -1,0 +1,3 @@
+method,max_min_fpr_gap,fpr_std_dev
+Text-Only Lexical Baseline,0.4000,0.1179
+Graph-Based Baseline,0.0000,0.0000

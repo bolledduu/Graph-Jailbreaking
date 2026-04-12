@@ -1,0 +1,55 @@
+{
+  "experiments": [
+    {
+      "id": "E0",
+      "rq": "RQ0",
+      "name": "Annotation Validation",
+      "goal": "Validate that graph annotation protocol produces consistent results",
+      "inputs": ["200 jailbreak prompts annotated by 2-3 independent annotators"],
+      "metrics": ["node_kappa", "edge_kappa", "normalized_graph_edit_distance"],
+      "targets": {"node_kappa": 0.70, "edge_kappa": 0.60, "mean_ged_max": 0.30}
+    },
+    {
+      "id": "E1",
+      "rq": "RQ1",
+      "name": "Graph vs Text Detection",
+      "goal": "Test whether graph features complement text features for jailbreak detection",
+      "models": ["text_only", "graph_only", "lr_graph_features", "hybrid_text_graph"],
+      "stratification": ["overall", "easy", "medium", "hard"],
+      "metrics": ["accuracy", "precision", "recall", "f1"]
+    },
+    {
+      "id": "E2",
+      "rq": "RQ2",
+      "name": "Transferability Prediction",
+      "goal": "Predict whether a jailbreak that works on one model also works on another",
+      "baselines": ["text_embedding_logistic_regression"],
+      "models": ["graph_feature_classifier"],
+      "metrics": ["accuracy", "roc_auc"]
+    },
+    {
+      "id": "E3",
+      "rq": "RQ3",
+      "name": "Motif Discovery",
+      "goal": "Find recurring subgraph patterns and their association with jailbreak success",
+      "method": "Enumerate directed subgraphs of size 2-4 and rank by frequency and success rate",
+      "outputs": ["top_10_motifs"]
+    },
+    {
+      "id": "E4",
+      "rq": "RQ4",
+      "name": "Fairness / Overblocking",
+      "goal": "Measure per-subgroup false-positive rates and disparity",
+      "safe_prompt_count": 600,
+      "safe_subgroups": 6,
+      "metrics": ["false_positive_rate", "max_min_fpr_gap", "fpr_std_dev"]
+    },
+    {
+      "id": "E5",
+      "rq": "Bonus",
+      "name": "Multi-Turn vs Single-Turn",
+      "goal": "Compare attack success rates for single-turn and multi-turn attacks",
+      "metrics": ["attack_success_rate"]
+    }
+  ]
+}

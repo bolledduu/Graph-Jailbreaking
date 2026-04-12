@@ -1,0 +1,9 @@
+model,difficulty,n,accuracy,precision,recall,f1,roc_auc
+SentenceEmbedding LR,overall,720,0.901389,0.973166,0.906667,0.938740,0.963556
+SentenceEmbedding LR,easy,599,0.884808,0.965909,0.887265,0.924918,0.956454
+SentenceEmbedding LR,medium,56,0.964286,1.000000,0.964286,0.981818,nan
+SentenceEmbedding LR,hard,65,1.000000,1.000000,1.000000,1.000000,nan
+SentenceEmbedding+GraphStruct LR,overall,720,0.911111,0.982014,0.910000,0.944637,0.969208
+SentenceEmbedding+GraphStruct LR,easy,599,0.893155,0.977011,0.887265,0.929978,0.961430
+SentenceEmbedding+GraphStruct LR,medium,56,1.000000,1.000000,1.000000,1.000000,nan
+SentenceEmbedding+GraphStruct LR,hard,65,1.000000,1.000000,1.000000,1.000000,nan

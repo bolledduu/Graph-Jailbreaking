@@ -1,0 +1,90 @@
+{
+  "caveat": "Motif frequency is available. Motif success rate remains NA until real model success labels exist.",
+  "created_at_utc": "2026-04-12T03:39:44.770867+00:00",
+  "question": "What structural motifs are most associated with successful jailbreak attacks?",
+  "result_table": "results/tables/table_4_top_motifs_real.csv",
+  "results": [
+    {
+      "example_row_id": "harmbench_0309",
+      "example_source": "HarmBench",
+      "frequency": "364",
+      "motif": "nodes:gradual_escalation,harmful_intent|edges:gradual_escalation>harmful_intent",
+      "rank": "1",
+      "success_rate": "NA"
+    },
+    {
+      "example_row_id": "harmbench_0394",
+      "example_source": "HarmBench",
+      "frequency": "251",
+      "motif": "nodes:gradual_escalation,roleplay|edges:roleplay>gradual_escalation",
+      "rank": "2",
+      "success_rate": "NA"
+    },
+    {
+      "example_row_id": "harmbench_0365",
+      "example_source": "HarmBench",
+      "frequency": "216",
+      "motif": "nodes:gradual_escalation,instruction_override|edges:gradual_escalation>instruction_override",
+      "rank": "3",
+      "success_rate": "NA"
+    },
+    {
+      "example_row_id": "harmbench_0377",
+      "example_source": "HarmBench",
+      "frequency": "171",
+      "motif": "nodes:gradual_escalation,harmful_intent,roleplay|edges:gradual_escalation>harmful_intent",
+      "rank": "4",
+      "success_rate": "NA"
+    },
+    {
+      "example_row_id": "harmbench_0384",
+      "example_source": "HarmBench",
+      "frequency": "135",
+      "motif": "nodes:authority_claim,gradual_escalation|edges:authority_claim>gradual_escalation",
+      "rank": "5",
+      "success_rate": "NA"
+    },
+    {
+      "example_row_id": "harmbench_0305",
+      "example_source": "HarmBench",
+      "frequency": "122",
+      "motif": "nodes:fiction,roleplay|edges:roleplay>fiction",
+      "rank": "6",
+      "success_rate": "NA"
+    },
+    {
+      "example_row_id": "harmbench_0399",
+      "example_source": "HarmBench",
+      "frequency": "118",
+      "motif": "nodes:authority_claim,roleplay|edges:roleplay>authority_claim",
+      "rank": "7",
+      "success_rate": "NA"
+    },
+    {
+      "example_row_id": "jailbreakv28k_00143",
+      "example_source": "JailbreakV-28K",
+      "frequency": "116",
+      "motif": "nodes:authority_claim,gradual_escalation,roleplay|edges:authority_claim>gradual_escalation,roleplay>authority_claim",
+      "rank": "8",
+      "success_rate": "NA"
+    },
+    {
+      "example_row_id": "jailbreakv28k_00409",
+      "example_source": "JailbreakV-28K",
+      "frequency": "104",
+      "motif": "nodes:authority_claim,harmful_intent,roleplay|edges:roleplay>authority_claim",
+      "rank": "9",
+      "success_rate": "NA"
+    },
+    {
+      "example_row_id": "jailbreakv28k_00409",
+      "example_source": "JailbreakV-28K",
+      "frequency": "102",
+      "motif": "nodes:authority_claim,gradual_escalation,harmful_intent|edges:authority_claim>gradual_escalation,gradual_escalation>harmful_intent",
+      "rank": "10",
+      "success_rate": "NA"
+    }
+  ],
+  "rq": "RQ3",
+  "status": "frequency_results_available_success_rate_blocked"
+}

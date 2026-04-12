@@ -1,0 +1,521 @@
+{
+  "caveat": "ML baselines use source-derived labels and first-pass heuristic graph annotations. Full-taxonomy graph variants include benign_query/harmful_intent as sanity checks; NoIntent and embedding variants are stricter comparisons.",
+  "created_at_utc": "2026-04-12T03:39:44.770867+00:00",
+  "dataset_summary": {
+    "by_attack_type": {
+      "encoding": 14,
+      "none": 600,
+      "obfuscation": 187,
+      "reasoning": 2072,
+      "roleplay": 726
+    },
+    "by_difficulty": {
+      "easy": 3009,
+      "hard": 324,
+      "medium": 266
+    },
+    "by_source_dataset": {
+      "AdvBench": 520,
+      "HarmBench": 391,
+      "JailbreakBench": 189,
+      "JailbreakDB-Jailbreak": 12,
+      "JailbreakDB-Regular": 500,
+      "JailbreakV-28K": 1687,
+      "JailbreakV-28K-RedTeam": 300
+    },
+    "by_type": {
+      "jailbreak": 2999,
+      "safe": 600
+    },
+    "dataset_path": "data/processed/gjb_real_v1.jsonl",
+    "model_gpt4_success_labels": 0,
+    "model_llama_success_labels": 0,
+    "multiturn_rows": 0,
+    "prompt_text_logged": false,
+    "safe_subgroups": {
+      "disinformation": 10,
+      "economic_harm": 10,
+      "expert_advice": 10,
+      "fraud_deception": 10,
+      "government_decision_making": 10,
+      "harassment_discrimination": 10,
+      "jailbreakdb_regular": 500,
+      "malware_hacking": 10,
+      "physical_harm": 10,
+      "privacy": 10,
+      "sexual_adult_content": 10
+    },
+    "total_rows": 3599
+  },
+  "embedding_baseline_results": [
+    {
+      "accuracy": "0.901389",
+      "difficulty": "overall",
+      "f1": "0.938740",
+      "model": "SentenceEmbedding LR",
+      "n": "720",
+      "precision": "0.973166",
+      "recall": "0.906667",
+      "roc_auc": "0.963556"
+    },
+    {
+      "accuracy": "0.884808",
+      "difficulty": "easy",
+      "f1": "0.924918",
+      "model": "SentenceEmbedding LR",
+      "n": "599",
+      "precision": "0.965909",
+      "recall": "0.887265",
+      "roc_auc": "0.956454"
+    },
+    {
+      "accuracy": "0.964286",
+      "difficulty": "medium",
+      "f1": "0.981818",
+      "model": "SentenceEmbedding LR",
+      "n": "56",
+      "precision": "1.000000",
+      "recall": "0.964286",
+      "roc_auc": "nan"
+    },
+    {
+      "accuracy": "1.000000",
+      "difficulty": "hard",
+      "f1": "1.000000",
+      "model": "SentenceEmbedding LR",
+      "n": "65",
+      "precision": "1.000000",
+      "recall": "1.000000",
+      "roc_auc": "nan"
+    },
+    {
+      "accuracy": "0.911111",
+      "difficulty": "overall",
+      "f1": "0.944637",
+      "model": "SentenceEmbedding+GraphStruct LR",
+      "n": "720",
+      "precision": "0.982014",
+      "recall": "0.910000",
+      "roc_auc": "0.969208"
+    },
+    {
+      "accuracy": "0.893155",
+      "difficulty": "easy",
+      "f1": "0.929978",
+      "model": "SentenceEmbedding+GraphStruct LR",
+      "n": "599",
+      "precision": "0.977011",
+      "recall": "0.887265",
+      "roc_auc": "0.961430"
+    },
+    {
+      "accuracy": "1.000000",
+      "difficulty": "medium",
+      "f1": "1.000000",
+      "model": "SentenceEmbedding+GraphStruct LR",
+      "n": "56",
+      "precision": "1.000000",
+      "recall": "1.000000",
+      "roc_auc": "nan"
+    },
+    {
+      "accuracy": "1.000000",
+      "difficulty": "hard",
+      "f1": "1.000000",
+      "model": "SentenceEmbedding+GraphStruct LR",
+      "n": "65",
+      "precision": "1.000000",
+      "recall": "1.000000",
+      "roc_auc": "nan"
+    }
+  ],
+  "embedding_config": {
+    "created_at_utc": "2026-04-12T03:39:43.687702+00:00",
+    "dataset": "data/processed/gjb_real_v1.jsonl",
+    "embedding_cache": "results/rq/rq1/embedding_baseline/sentence-transformers__all-MiniLM-L6-v2_embeddings.npz",
+    "hf_home": "/Users/pradeep/Documents/New project/graph-jailbreak-bench/.hf-cache",
+    "model_name": "sentence-transformers/all-MiniLM-L6-v2",
+    "prompt_text_logged": false,
+    "seed": 31,
+    "test_size": 0.2
+  },
+  "ml_baseline_results": [
+    {
+      "accuracy": "0.929167",
+      "difficulty": "overall",
+      "f1": "0.956373",
+      "model": "Text-Only TFIDF LR",
+      "n": "720",
+      "precision": "0.982425",
+      "recall": "0.931667",
+      "roc_auc": "0.973722"
+    },
+    {
+      "accuracy": "0.918033",
+      "difficulty": "easy",
+      "f1": "0.947368",
+      "model": "Text-Only TFIDF LR",
+      "n": "610",
+      "precision": "0.978261",
+      "recall": "0.918367",
+      "roc_auc": "0.968724"
+    },
+    {
+      "accuracy": "0.974359",
+      "difficulty": "medium",
+      "f1": "0.987013",
+      "model": "Text-Only TFIDF LR",
+      "n": "39",
+      "precision": "1.000000",
+      "recall": "0.974359",
+      "roc_auc": "nan"
+    },
+    {
+      "accuracy": "1.000000",
+      "difficulty": "hard",
+      "f1": "1.000000",
+      "model": "Text-Only TFIDF LR",
+      "n": "71",
+      "precision": "1.000000",
+      "recall": "1.000000",
+      "roc_auc": "nan"
+    },
+    {
+      "accuracy": "0.413889",
+      "difficulty": "overall",
+      "f1": "0.457584",
+      "model": "Graph-Structural LR",
+      "n": "720",
+      "precision": "1.000000",
+      "recall": "0.296667",
+      "roc_auc": "0.648333"
+    },
+    {
+      "accuracy": "0.308197",
+      "difficulty": "easy",
+      "f1": "0.243728",
+      "model": "Graph-Structural LR",
+      "n": "610",
+      "precision": "1.000000",
+      "recall": "0.138776",
+      "roc_auc": "0.569388"
+    },
+    {
+      "accuracy": "1.000000",
+      "difficulty": "medium",
+      "f1": "1.000000",
+      "model": "Graph-Structural LR",
+      "n": "39",
+      "precision": "1.000000",
+      "recall": "1.000000",
+      "roc_auc": "nan"
+    },
+    {
+      "accuracy": "1.000000",
+      "difficulty": "hard",
+      "f1": "1.000000",
+      "model": "Graph-Structural LR",
+      "n": "71",
+      "precision": "1.000000",
+      "recall": "1.000000",
+      "roc_auc": "nan"
+    },
+    {
+      "accuracy": "1.000000",
+      "difficulty": "overall",
+      "f1": "1.000000",
+      "model": "Graph-Taxonomy LR",
+      "n": "720",
+      "precision": "1.000000",
+      "recall": "1.000000",
+      "roc_auc": "1.000000"
+    },
+    {
+      "accuracy": "1.000000",
+      "difficulty": "easy",
+      "f1": "1.000000",
+      "model": "Graph-Taxonomy LR",
+      "n": "610",
+      "precision": "1.000000",
+      "recall": "1.000000",
+      "roc_auc": "1.000000"
+    },
+    {
+      "accuracy": "1.000000",
+      "difficulty": "medium",
+      "f1": "1.000000",
+      "model": "Graph-Taxonomy LR",
+      "n": "39",
+      "precision": "1.000000",
+      "recall": "1.000000",
+      "roc_auc": "nan"
+    },
+    {
+      "accuracy": "1.000000",
+      "difficulty": "hard",
+      "f1": "1.000000",
+      "model": "Graph-Taxonomy LR",
+      "n": "71",
+      "precision": "1.000000",
+      "recall": "1.000000",
+      "roc_auc": "nan"
+    },
+    {
+      "accuracy": "0.875000",
+      "difficulty": "overall",
+      "f1": "0.918919",
+      "model": "Graph-Taxonomy NoIntent LR",
+      "n": "720",
+      "precision": "1.000000",
+      "recall": "0.850000",
+      "roc_auc": "0.925000"
+    },
+    {
+      "accuracy": "0.852459",
+      "difficulty": "easy",
+      "f1": "0.898876",
+      "model": "Graph-Taxonomy NoIntent LR",
+      "n": "610",
+      "precision": "1.000000",
+      "recall": "0.816327",
+      "roc_auc": "0.908163"
+    },
+    {
+      "accuracy": "1.000000",
+      "difficulty": "medium",
+      "f1": "1.000000",
+      "model": "Graph-Taxonomy NoIntent LR",
+      "n": "39",
+      "precision": "1.000000",
+      "recall": "1.000000",
+      "roc_auc": "nan"
+    },
+    {
+      "accuracy": "1.000000",
+      "difficulty": "hard",
+      "f1": "1.000000",
+      "model": "Graph-Taxonomy NoIntent LR",
+      "n": "71",
+      "precision": "1.000000",
+      "recall": "1.000000",
+      "roc_auc": "nan"
+    },
+    {
+      "accuracy": "1.000000",
+      "difficulty": "overall",
+      "f1": "1.000000",
+      "model": "Hybrid Text+Graph LR",
+      "n": "720",
+      "precision": "1.000000",
+      "recall": "1.000000",
+      "roc_auc": "1.000000"
+    },
+    {
+      "accuracy": "1.000000",
+      "difficulty": "easy",
+      "f1": "1.000000",
+      "model": "Hybrid Text+Graph LR",
+      "n": "610",
+      "precision": "1.000000",
+      "recall": "1.000000",
+      "roc_auc": "1.000000"
+    },
+    {
+      "accuracy": "1.000000",
+      "difficulty": "medium",
+      "f1": "1.000000",
+      "model": "Hybrid Text+Graph LR",
+      "n": "39",
+      "precision": "1.000000",
+      "recall": "1.000000",
+      "roc_auc": "nan"
+    },
+    {
+      "accuracy": "1.000000",
+      "difficulty": "hard",
+      "f1": "1.000000",
+      "model": "Hybrid Text+Graph LR",
+      "n": "71",
+      "precision": "1.000000",
+      "recall": "1.000000",
+      "roc_auc": "nan"
+    },
+    {
+      "accuracy": "0.916667",
+      "difficulty": "overall",
+      "f1": "0.947461",
+      "model": "Hybrid Text+Graph NoIntent LR",
+      "n": "720",
+      "precision": "0.998155",
+      "recall": "0.901667",
+      "roc_auc": "0.993917"
+    },
+    {
+      "accuracy": "0.901639",
+      "difficulty": "easy",
+      "f1": "0.934924",
+      "model": "Hybrid Text+Graph NoIntent LR",
+      "n": "610",
+      "precision": "0.997685",
+      "recall": "0.879592",
+      "roc_auc": "0.992551"
+    },
+    {
+      "accuracy": "1.000000",
+      "difficulty": "medium",
+      "f1": "1.000000",
+      "model": "Hybrid Text+Graph NoIntent LR",
+      "n": "39",
+      "precision": "1.000000",
+      "recall": "1.000000",
+      "roc_auc": "nan"
+    },
+    {
+      "accuracy": "1.000000",
+      "difficulty": "hard",
+      "f1": "1.000000",
+      "model": "Hybrid Text+Graph NoIntent LR",
+      "n": "71",
+      "precision": "1.000000",
+      "recall": "1.000000",
+      "roc_auc": "nan"
+    }
+  ],
+  "ml_config": {
+    "caveat": "Uses source-derived labels and first-pass heuristic graph annotations. Full taxonomy variants include benign_query/harmful_intent and are sanity checks; NoIntent variants exclude those direct intent labels. Suitable for baseline pipeline evidence, not final paper claims.",
+    "created_at_utc": "2026-04-12T03:39:42.639399+00:00",
+    "dataset": "data/processed/gjb_real_v1.jsonl",
+    "models": [
+      "Graph-Structural LR",
+      "Graph-Taxonomy LR",
+      "Graph-Taxonomy NoIntent LR",
+      "Hybrid Text+Graph LR",
+      "Hybrid Text+Graph NoIntent LR",
+      "Text-Only TFIDF LR"
+    ],
+    "output_dir": "results/rq/rq1",
+    "prompt_text_logged": false,
+    "seed": 30,
+    "test_rows": 720,
+    "test_size": 0.2,
+    "train_rows": 2879
+  },
+  "question": "Do structural graph features provide complementary signal to text features for jailbreak detection?",
+  "quick_rule_results": [
+    {
+      "accuracy": "0.4098",
+      "difficulty": "overall",
+      "f1": "0.4576",
+      "model": "Text-Only Lexical Baseline",
+      "n": "3599",
+      "precision": "0.9771",
+      "recall": "0.2988"
+    },
+    {
+      "accuracy": "0.3426",
+      "difficulty": "easy",
+      "f1": "0.3137",
+      "model": "Text-Only Lexical Baseline",
+      "n": "3009",
+      "precision": "0.9556",
+      "recall": "0.1876"
+    },
+    {
+      "accuracy": "0.7594",
+      "difficulty": "medium",
+      "f1": "0.8632",
+      "model": "Text-Only Lexical Baseline",
+      "n": "266",
+      "precision": "1.0000",
+      "recall": "0.7594"
+    },
+    {
+      "accuracy": "0.7469",
+      "difficulty": "hard",
+      "f1": "0.8551",
+      "model": "Text-Only Lexical Baseline",
+      "n": "324",
+      "precision": "1.0000",
+      "recall": "0.7469"
+    },
+    {
+      "accuracy": "0.4818",
+      "difficulty": "overall",
+      "f1": "0.5488",
+      "model": "Graph-Only Rule Baseline",
+      "n": "3599",
+      "precision": "1.0000",
+      "recall": "0.3781"
+    },
+    {
+      "accuracy": "0.4161",
+      "difficulty": "easy",
+      "f1": "0.4260",
+      "model": "Graph-Only Rule Baseline",
+      "n": "3009",
+      "precision": "1.0000",
+      "recall": "0.2707"
+    },
+    {
+      "accuracy": "0.8383",
+      "difficulty": "medium",
+      "f1": "0.9121",
+      "model": "Graph-Only Rule Baseline",
+      "n": "266",
+      "precision": "1.0000",
+      "recall": "0.8383"
+    },
+    {
+      "accuracy": "0.7994",
+      "difficulty": "hard",
+      "f1": "0.8885",
+      "model": "Graph-Only Rule Baseline",
+      "n": "324",
+      "precision": "1.0000",
+      "recall": "0.7994"
+    },
+    {
+      "accuracy": "0.4785",
+      "difficulty": "overall",
+      "f1": "0.5491",
+      "model": "Hybrid Text+Graph Baseline",
+      "n": "3599",
+      "precision": "0.9820",
+      "recall": "0.3811"
+    },
+    {
+      "accuracy": "0.4121",
+      "difficulty": "easy",
+      "f1": "0.4277",
+      "model": "Hybrid Text+Graph Baseline",
+      "n": "3009",
+      "precision": "0.9692",
+      "recall": "0.2744"
+    },
+    {
+      "accuracy": "0.8383",
+      "difficulty": "medium",
+      "f1": "0.9121",
+      "model": "Hybrid Text+Graph Baseline",
+      "n": "266",
+      "precision": "1.0000",
+      "recall": "0.8383"
+    },
+    {
+      "accuracy": "0.7994",
+      "difficulty": "hard",
+      "f1": "0.8885",
+      "model": "Hybrid Text+Graph Baseline",
+      "n": "324",
+      "precision": "1.0000",
+      "recall": "0.7994"
+    }
+  ],
+  "result_tables": [
+    "results/tables/table_2_detection_real.csv",
+    "results/rq/rq1/e1_ml_metrics.csv",
+    "results/rq/rq1/embedding_baseline/e1_embedding_metrics.csv"
+  ],
+  "rq": "RQ1",
+  "status": "baseline_results_available_not_final"
+}

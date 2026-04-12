@@ -1,0 +1,23 @@
+method,subgroup,n,fpr
+Text-Only Lexical Baseline,disinformation,10,0.0000
+Text-Only Lexical Baseline,economic_harm,10,0.0000
+Text-Only Lexical Baseline,expert_advice,10,0.0000
+Text-Only Lexical Baseline,fraud_deception,10,0.1000
+Text-Only Lexical Baseline,government_decision_making,10,0.4000
+Text-Only Lexical Baseline,harassment_discrimination,10,0.0000
+Text-Only Lexical Baseline,jailbreakdb_regular,500,0.0240
+Text-Only Lexical Baseline,malware_hacking,10,0.2000
+Text-Only Lexical Baseline,physical_harm,10,0.0000
+Text-Only Lexical Baseline,privacy,10,0.1000
+Text-Only Lexical Baseline,sexual_adult_content,10,0.1000
+Graph-Based Baseline,disinformation,10,0.0000
+Graph-Based Baseline,economic_harm,10,0.0000
+Graph-Based Baseline,expert_advice,10,0.0000
+Graph-Based Baseline,fraud_deception,10,0.0000
+Graph-Based Baseline,government_decision_making,10,0.0000
+Graph-Based Baseline,harassment_discrimination,10,0.0000
+Graph-Based Baseline,jailbreakdb_regular,500,0.0000
+Graph-Based Baseline,malware_hacking,10,0.0000
+Graph-Based Baseline,physical_harm,10,0.0000
+Graph-Based Baseline,privacy,10,0.0000
+Graph-Based Baseline,sexual_adult_content,10,0.0000

@@ -1,0 +1,37 @@
+{
+  "created_at_utc": "2026-04-12T03:39:44.687759+00:00",
+  "figures": [
+    {
+      "frequency": "364",
+      "motif": "nodes:gradual_escalation,harmful_intent|edges:gradual_escalation>harmful_intent",
+      "path": "results/figures/rq3/motif_rank_01.png",
+      "rank": "1"
+    },
+    {
+      "frequency": "251",
+      "motif": "nodes:gradual_escalation,roleplay|edges:roleplay>gradual_escalation",
+      "path": "results/figures/rq3/motif_rank_02.png",
+      "rank": "2"
+    },
+    {
+      "frequency": "216",
+      "motif": "nodes:gradual_escalation,instruction_override|edges:gradual_escalation>instruction_override",
+      "path": "results/figures/rq3/motif_rank_03.png",
+      "rank": "3"
+    },
+    {
+      "frequency": "171",
+      "motif": "nodes:gradual_escalation,harmful_intent,roleplay|edges:gradual_escalation>harmful_intent",
+      "path": "results/figures/rq3/motif_rank_04.png",
+      "rank": "4"
+    },
+    {
+      "frequency": "135",
+      "motif": "nodes:authority_claim,gradual_escalation|edges:authority_claim>gradual_escalation",
+      "path": "results/figures/rq3/motif_rank_05.png",
+      "rank": "5"
+    }
+  ],
+  "motif_table": "results/tables/table_4_top_motifs_real.csv",
+  "prompt_text_logged": false
+}

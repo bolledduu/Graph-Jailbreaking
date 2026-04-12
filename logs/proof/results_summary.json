@@ -1,0 +1,39 @@
+{
+  "tables": [
+    {
+      "path": "results/tables/table_10_asr_status.csv",
+      "rows_excluding_header": 1,
+      "sha256": "582557ae4a5439ec7816e89736ec032eef6b7aaf013e64f5cccd089fb0e6987b"
+    },
+    {
+      "path": "results/tables/table_2_detection_real.csv",
+      "rows_excluding_header": 12,
+      "sha256": "13944db618f24241594d1dd807f4bb0fa5d605bfec5e90371005bf8bdaa9ad80"
+    },
+    {
+      "path": "results/tables/table_3_transferability_status.csv",
+      "rows_excluding_header": 1,
+      "sha256": "66e851f0c1dbb52436cd755441da8b89aa5b0b55a908d78f2066a0bfcb0f8d4f"
+    },
+    {
+      "path": "results/tables/table_4_top_motifs_real.csv",
+      "rows_excluding_header": 10,
+      "sha256": "ea895454695b0609b9f18c32a4d4bc88b4ca4c58d99d68d735ce73c8282d4a54"
+    },
+    {
+      "path": "results/tables/table_5_fairness_real.csv",
+      "rows_excluding_header": 22,
+      "sha256": "36eb413641db1a4e4b4dda1efbe20f16788c5db259046515a4153110180115d5"
+    },
+    {
+      "path": "results/tables/table_6_fairness_disparity_real.csv",
+      "rows_excluding_header": 2,
+      "sha256": "46e4170f13f745f58b24bda4e94282b4ca8889b8be1fb11570d511be541c66d8"
+    },
+    {
+      "path": "results/tables/table_7_dataset_statistics_real.csv",
+      "rows_excluding_header": 28,
+      "sha256": "9847f901743b7b2605611bdee2668b079852b793307c9c13325705d42ba860cf"
+    }
+  ]
+}

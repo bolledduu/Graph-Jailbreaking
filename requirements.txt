@@ -1,0 +1,27 @@
+# Core data + workbook handling
+pandas>=2.3
+openpyxl>=3.1
+pyarrow>=20.0
+
+# Graph mining and classical ML experiments
+networkx>=3.4
+numpy>=2.2
+scipy>=1.15
+scikit-learn>=1.6
+joblib>=1.4
+
+# Experiment reporting and plotting
+matplotlib>=3.10
+seaborn>=0.13
+tqdm>=4.67
+
+# Dataset/source access
+requests>=2.32
+huggingface-hub>=0.30
+datasets>=3.6
+
+# Text-model experiments
+transformers>=4.51
+accelerate>=1.6
+sentence-transformers>=4.1
+

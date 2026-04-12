@@ -1,0 +1,19 @@
+{
+  "caveat": "Uses source-derived labels and first-pass heuristic graph annotations. Full taxonomy variants include benign_query/harmful_intent and are sanity checks; NoIntent variants exclude those direct intent labels. Suitable for baseline pipeline evidence, not final paper claims.",
+  "created_at_utc": "2026-04-12T03:39:42.639399+00:00",
+  "dataset": "data/processed/gjb_real_v1.jsonl",
+  "models": [
+    "Graph-Structural LR",
+    "Graph-Taxonomy LR",
+    "Graph-Taxonomy NoIntent LR",
+    "Hybrid Text+Graph LR",
+    "Hybrid Text+Graph NoIntent LR",
+    "Text-Only TFIDF LR"
+  ],
+  "output_dir": "results/rq/rq1",
+  "prompt_text_logged": false,
+  "seed": 30,
+  "test_rows": 720,
+  "test_size": 0.2,
+  "train_rows": 2879
+}

@@ -1,0 +1,20 @@
+{
+  "created_at_utc": "2026-04-12T03:39:44.770867+00:00",
+  "needed_to_complete": [
+    "Collect real Model A success labels.",
+    "Collect real Model B success labels.",
+    "Train text-feature and graph-feature transfer classifiers."
+  ],
+  "question": "Do graph-based features generalize better across models for predicting jailbreak success?",
+  "result_table": "results/tables/table_3_transferability_status.csv",
+  "results": [
+    {
+      "experiment": "E2 Transferability Prediction",
+      "n_labeled": "0",
+      "reason": "Real source CSVs do not include GPT-4/LLaMA success labels.",
+      "status": "blocked"
+    }
+  ],
+  "rq": "RQ2",
+  "status": "blocked_pending_cross_model_success_labels"
+}

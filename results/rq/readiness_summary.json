@@ -1,0 +1,65 @@
+{
+  "created_at_utc": "2026-04-12T03:39:44.770867+00:00",
+  "dataset_enough_for_baseline_runs": true,
+  "dataset_enough_for_final_all_rqs": false,
+  "dataset_summary": {
+    "by_attack_type": {
+      "encoding": 14,
+      "none": 600,
+      "obfuscation": 187,
+      "reasoning": 2072,
+      "roleplay": 726
+    },
+    "by_difficulty": {
+      "easy": 3009,
+      "hard": 324,
+      "medium": 266
+    },
+    "by_source_dataset": {
+      "AdvBench": 520,
+      "HarmBench": 391,
+      "JailbreakBench": 189,
+      "JailbreakDB-Jailbreak": 12,
+      "JailbreakDB-Regular": 500,
+      "JailbreakV-28K": 1687,
+      "JailbreakV-28K-RedTeam": 300
+    },
+    "by_type": {
+      "jailbreak": 2999,
+      "safe": 600
+    },
+    "dataset_path": "data/processed/gjb_real_v1.jsonl",
+    "model_gpt4_success_labels": 0,
+    "model_llama_success_labels": 0,
+    "multiturn_rows": 0,
+    "prompt_text_logged": false,
+    "safe_subgroups": {
+      "disinformation": 10,
+      "economic_harm": 10,
+      "expert_advice": 10,
+      "fraud_deception": 10,
+      "government_decision_making": 10,
+      "harassment_discrimination": 10,
+      "jailbreakdb_regular": 500,
+      "malware_hacking": 10,
+      "physical_harm": 10,
+      "privacy": 10,
+      "sexual_adult_content": 10
+    },
+    "total_rows": 3599
+  },
+  "rq_status": {
+    "E5": "blocked_pending_real_multiturn_variants_and_success_labels",
+    "RQ0": "blocked_pending_human_annotation",
+    "RQ1": "baseline_results_available_not_final",
+    "RQ2": "blocked_pending_cross_model_success_labels",
+    "RQ3": "frequency_results_available_success_rate_blocked",
+    "RQ4": "baseline_results_available_safe_grouping_not_final"
+  },
+  "why": [
+    "The expanded dataset has 3,599 rows, within the workbook's overall target range.",
+    "It has 2,999 harmful/jailbreak rows, within the workbook's 2,000-3,000 target range.",
+    "It has 600 safe rows, matching the workbook safe-count target.",
+    "It still lacks human annotator labels, model success labels, and real multi-turn rows."
+  ]
+}

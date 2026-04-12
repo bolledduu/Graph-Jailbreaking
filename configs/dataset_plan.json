@@ -1,0 +1,61 @@
+{
+  "dataset_name": "GraphJailbreakBench",
+  "schema_version": "0.1.0",
+  "target_size": {
+    "real_source_current": {
+      "advbench_harmful": 520,
+      "jailbreakbench_harmful": 100,
+      "jailbreakbench_benign": 100,
+      "harmbench_harmful": 400,
+      "total_before_optional_deduplication": 1120
+    },
+    "jailbreak_single_turn": {
+      "min": 2000,
+      "max": 3000,
+      "priority": "MUST HAVE"
+    },
+    "multiturn": {
+      "min": 500,
+      "max": 1000,
+      "priority": "SHOULD HAVE"
+    },
+    "safe": {
+      "exact": 600,
+      "per_subgroup": 100,
+      "priority": "MUST HAVE"
+    }
+  },
+  "safe_subgroups": [
+    "formal_academic",
+    "informal_colloquial",
+    "non_native_english",
+    "security_technical",
+    "medical_health",
+    "creative_writing"
+  ],
+  "required_columns": [
+    "id",
+    "type",
+    "source_dataset",
+    "prompt",
+    "conversation",
+    "attack_type",
+    "difficulty",
+    "graph_nodes",
+    "graph_edges",
+    "graph_depth",
+    "num_nodes",
+    "model_gpt4_response",
+    "model_gpt4_success",
+    "model_llama_response",
+    "model_llama_success",
+    "is_jailbreak",
+    "is_harmful"
+  ],
+  "extension_columns": [
+    "safe_subgroup",
+    "source_record_id",
+    "source_category",
+    "metadata"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "audit": "results/rq/rq4/safe_subgroup_assignment_audit.csv",
+  "caveat": "Baseline subgroup assignment only. Human review recommended before final fairness claims.",
+  "created_at_utc": "2026-04-12T03:39:44.020213+00:00",
+  "input": "data/processed/gjb_real_v1.jsonl",
+  "method": "deterministic_keyword_balanced_v1",
+  "output": "data/processed/gjb_real_v1_rq4_balanced.jsonl",
+  "prompt_text_logged": false,
+  "safe_counts": {
+    "creative_writing": 100,
+    "formal_academic": 100,
+    "informal_colloquial": 100,
+    "medical_health": 100,
+    "non_native_english": 100,
+    "security_technical": 100
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "created_at_utc": "2026-04-12T03:39:44.770867+00:00",
+  "current_artifacts": {
+    "annotation_metrics_code": "src/gjb/metrics.py",
+    "taxonomy": "configs/taxonomy.json"
+  },
+  "dataset_summary": {
+    "by_attack_type": {
+      "encoding": 14,
+      "none": 600,
+      "obfuscation": 187,
+      "reasoning": 2072,
+      "roleplay": 726
+    },
+    "by_difficulty": {
+      "easy": 3009,
+      "hard": 324,
+      "medium": 266
+    },
+    "by_source_dataset": {
+      "AdvBench": 520,
+      "HarmBench": 391,
+      "JailbreakBench": 189,
+      "JailbreakDB-Jailbreak": 12,
+      "JailbreakDB-Regular": 500,
+      "JailbreakV-28K": 1687,
+      "JailbreakV-28K-RedTeam": 300
+    },
+    "by_type": {
+      "jailbreak": 2999,
+      "safe": 600
+    },
+    "dataset_path": "data/processed/gjb_real_v1.jsonl",
+    "model_gpt4_success_labels": 0,
+    "model_llama_success_labels": 0,
+    "multiturn_rows": 0,
+    "prompt_text_logged": false,
+    "safe_subgroups": {
+      "disinformation": 10,
+      "economic_harm": 10,
+      "expert_advice": 10,
+      "fraud_deception": 10,
+      "government_decision_making": 10,
+      "harassment_discrimination": 10,
+      "jailbreakdb_regular": 500,
+      "malware_hacking": 10,
+      "physical_harm": 10,
+      "privacy": 10,
+      "sexual_adult_content": 10
+    },
+    "total_rows": 3599
+  },
+  "needed_to_complete": [
+    "Select 200 real harmful prompts.",
+    "Create 2-3 independent human annotation files with graph nodes and edges.",
+    "Run node kappa, edge kappa, and normalized graph edit distance."
+  ],
+  "question": "Can jailbreak prompts be reliably decomposed into semantic graphs using a structured annotation protocol?",
+  "rq": "RQ0",
+  "status": "blocked_pending_human_annotation"
+}

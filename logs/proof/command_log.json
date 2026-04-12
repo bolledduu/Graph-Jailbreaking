@@ -1,0 +1,170 @@
+[
+  {
+    "command": [
+      "/Users/pradeep/Documents/New project/graph-jailbreak-bench/.venv/bin/python",
+      "scripts/verify_sources.py"
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "AdvBench: exists=True rows=520 checksum_match=True\nJailbreakBench harmful behaviors: exists=True rows=100 checksum_match=True\nJailbreakBench benign behaviors: exists=True rows=100 checksum_match=True\nHarmBench text behaviors: exists=True rows=400 checksum_match=True\nJailbreakV-28K full CSV: exists=True rows=28000 checksum_match=True\nJailbreakV-28K RedTeam CSV: exists=True rows=2000 checksum_match=True\nJailbreakDB jailbreak unique: exists=True rows=445752 checksum_match=True\nJailbreakDB regular unique: exists=True rows=1094122 checksum_match=True\n"
+  },
+  {
+    "command": [
+      "/Users/pradeep/Documents/New project/graph-jailbreak-bench/.venv/bin/python",
+      "scripts/build_dataset.py",
+      "--output",
+      "data/processed/gjb_real_v1.jsonl"
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "Wrote 3599 real-source rows to /Users/pradeep/Documents/New project/graph-jailbreak-bench/data/processed/gjb_real_v1.jsonl\nBy source: {'AdvBench': 520, 'HarmBench': 391, 'JailbreakBench': 189, 'JailbreakDB-Jailbreak': 12, 'JailbreakDB-Regular': 500, 'JailbreakV-28K': 1687, 'JailbreakV-28K-RedTeam': 300}\nBy type: {'jailbreak': 2999, 'safe': 600}\nSafe groups: {'disinformation': 10, 'economic_harm': 10, 'expert_advice': 10, 'fraud_deception': 10, 'government_decision_making': 10, 'harassment_discrimination': 10, 'jailbreakdb_regular': 500, 'malware_hacking': 10, 'physical_harm': 10, 'privacy': 10, 'sexual_adult_content': 10}\n"
+  },
+  {
+    "command": [
+      "/Users/pradeep/Documents/New project/graph-jailbreak-bench/.venv/bin/python",
+      "scripts/create_annotation_packets.py",
+      "--dataset",
+      "data/processed/gjb_real_v1.jsonl",
+      "--rq0-sample-size",
+      "200",
+      "--e5-base-sample-size",
+      "250",
+      "--seed",
+      "30"
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "{\n  \"created_at_utc\": \"2026-04-12T03:39:41.189144+00:00\",\n  \"dataset\": \"data/processed/gjb_real_v1.jsonl\",\n  \"e5\": {\n    \"base_prompt_sample_size\": 250,\n    \"path\": \"data/annotations/e5/multiturn_variants_template.csv\",\n    \"prompt_text_duplicated\": false,\n    \"sample_seed\": 30,\n    \"variant_rows\": 500\n  },\n  \"rq0\": {\n    \"annotator_templates\": [\n      \"data/annotations/rq0/annotator_a_template.csv\",\n      \"data/annotations/rq0/annotator_b_template.csv\",\n      \"data/annotations/rq0/annotator_c_template.csv\"\n    ],\n    \"by_source_dataset\": {\n      \"AdvBench\": 34,\n      \"HarmBench\": 21,\n      \"JailbreakBench\": 7,\n      \"JailbreakV-28K\": 118,\n      \"JailbreakV-28K-RedTeam\": 20\n    },\n    \"prompt_text_duplicated\": false,\n    \"sample_path\": \"data/annotations/rq0/rq0_sample_ids.csv\",\n    \"sample_seed\": 30,\n    \"sample_size\": 200\n  },\n  \"rq2\": {\n    \"path\": \"data/annotations/rq2/model_success_template.csv\",\n    \"prompt_text_duplicated\": false,\n    \"rows\": 2999\n  }\n}\n"
+  },
+  {
+    "command": [
+      "/Users/pradeep/Documents/New project/graph-jailbreak-bench/.venv/bin/python",
+      "scripts/run_rq0_annotation_validation.py",
+      "--annotation-dir",
+      "data/annotations/rq0",
+      "--output",
+      "results/rq/rq0/rq0_annotation_validation.json"
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "{\n  \"annotation_files\": [\n    \"data/annotations/rq0/annotator_a_template.csv\",\n    \"data/annotations/rq0/annotator_b_template.csv\",\n    \"data/annotations/rq0/annotator_c_template.csv\"\n  ],\n  \"blank_rows_by_file\": {\n    \"annotator_a_template.csv\": 200,\n    \"annotator_b_template.csv\": 200,\n    \"annotator_c_template.csv\": 200\n  },\n  \"created_at_utc\": \"2026-04-12T03:39:41.244857+00:00\",\n  \"pairwise_results\": [],\n  \"prompt_text_logged\": false,\n  \"status\": \"blocked_pending_human_annotation\",\n  \"targets\": {\n    \"edge_kappa_min\": 0.6,\n    \"mean_normalized_ged_max\": 0.3,\n    \"node_kappa_min\": 0.7\n  }\n}\n"
+  },
+  {
+    "command": [
+      "/Users/pradeep/Documents/New project/graph-jailbreak-bench/.venv/bin/python",
+      "scripts/run_e1_ml_baselines.py",
+      "--dataset",
+      "data/processed/gjb_real_v1.jsonl",
+      "--output-dir",
+      "results/rq/rq1",
+      "--test-size",
+      "0.20",
+      "--seed",
+      "30"
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "{\n  \"caveat\": \"Uses source-derived labels and first-pass heuristic graph annotations. Full taxonomy variants include benign_query/harmful_intent and are sanity checks; NoIntent variants exclude those direct intent labels. Suitable for baseline pipeline evidence, not final paper claims.\",\n  \"created_at_utc\": \"2026-04-12T03:39:42.639399+00:00\",\n  \"dataset\": \"data/processed/gjb_real_v1.jsonl\",\n  \"metrics\": \"/Users/pradeep/Documents/New project/graph-jailbreak-bench/results/rq/rq1/e1_ml_metrics.csv\",\n  \"models\": [\n    \"Graph-Structural LR\",\n    \"Graph-Taxonomy LR\",\n    \"Graph-Taxonomy NoIntent LR\",\n    \"Hybrid Text+Graph LR\",\n    \"Hybrid Text+Graph NoIntent LR\",\n    \"Text-Only TFIDF LR\"\n  ],\n  \"output_dir\": \"results/rq/rq1\",\n  \"predictions\": \"/Users/pradeep/Documents/New project/graph-jailbreak-bench/results/rq/rq1/e1_ml_predictions.csv\",\n  \"prompt_text_logged\": false,\n  \"seed\": 30,\n  \"test_rows\": 720,\n  \"test_size\": 0.2,\n  \"train_rows\": 2879\n}\n"
+  },
+  {
+    "command": [
+      "/Users/pradeep/Documents/New project/graph-jailbreak-bench/.venv/bin/python",
+      "scripts/run_e1_embedding_baselines.py",
+      "--dataset",
+      "data/processed/gjb_real_v1.jsonl",
+      "--output-dir",
+      "results/rq/rq1/embedding_baseline",
+      "--model-name",
+      "sentence-transformers/all-MiniLM-L6-v2",
+      "--batch-size",
+      "64",
+      "--test-size",
+      "0.20",
+      "--seed",
+      "31"
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "{\n  \"created_at_utc\": \"2026-04-12T03:39:43.687702+00:00\",\n  \"dataset\": \"data/processed/gjb_real_v1.jsonl\",\n  \"embedding_cache\": \"results/rq/rq1/embedding_baseline/sentence-transformers__all-MiniLM-L6-v2_embeddings.npz\",\n  \"hf_home\": \"/Users/pradeep/Documents/New project/graph-jailbreak-bench/.hf-cache\",\n  \"metrics\": \"results/rq/rq1/embedding_baseline/e1_embedding_metrics.csv\",\n  \"model_name\": \"sentence-transformers/all-MiniLM-L6-v2\",\n  \"prompt_text_logged\": false,\n  \"seed\": 31,\n  \"test_size\": 0.2\n}\n"
+  },
+  {
+    "command": [
+      "/Users/pradeep/Documents/New project/graph-jailbreak-bench/.venv/bin/python",
+      "scripts/run_baseline_experiments.py",
+      "--dataset",
+      "data/processed/gjb_real_v1.jsonl",
+      "--output-dir",
+      "results/tables"
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "Wrote real-source experiment tables/status files to /Users/pradeep/Documents/New project/graph-jailbreak-bench/results/tables\n"
+  },
+  {
+    "command": [
+      "/Users/pradeep/Documents/New project/graph-jailbreak-bench/.venv/bin/python",
+      "scripts/assign_rq4_safe_subgroups.py",
+      "--dataset",
+      "data/processed/gjb_real_v1.jsonl",
+      "--output",
+      "data/processed/gjb_real_v1_rq4_balanced.jsonl",
+      "--audit",
+      "results/rq/rq4/safe_subgroup_assignment_audit.csv",
+      "--per-group",
+      "100"
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "{\n  \"audit\": \"results/rq/rq4/safe_subgroup_assignment_audit.csv\",\n  \"caveat\": \"Baseline subgroup assignment only. Human review recommended before final fairness claims.\",\n  \"created_at_utc\": \"2026-04-12T03:39:44.020213+00:00\",\n  \"input\": \"data/processed/gjb_real_v1.jsonl\",\n  \"method\": \"deterministic_keyword_balanced_v1\",\n  \"output\": \"data/processed/gjb_real_v1_rq4_balanced.jsonl\",\n  \"prompt_text_logged\": false,\n  \"safe_counts\": {\n    \"creative_writing\": 100,\n    \"formal_academic\": 100,\n    \"informal_colloquial\": 100,\n    \"medical_health\": 100,\n    \"non_native_english\": 100,\n    \"security_technical\": 100\n  }\n}\n"
+  },
+  {
+    "command": [
+      "/Users/pradeep/Documents/New project/graph-jailbreak-bench/.venv/bin/python",
+      "scripts/run_baseline_experiments.py",
+      "--dataset",
+      "data/processed/gjb_real_v1_rq4_balanced.jsonl",
+      "--output-dir",
+      "results/tables/rq4_balanced"
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "Wrote real-source experiment tables/status files to /Users/pradeep/Documents/New project/graph-jailbreak-bench/results/tables/rq4_balanced\n"
+  },
+  {
+    "command": [
+      "/Users/pradeep/Documents/New project/graph-jailbreak-bench/.venv/bin/python",
+      "scripts/plot_rq3_motifs.py",
+      "--motifs",
+      "results/tables/table_4_top_motifs_real.csv",
+      "--output-dir",
+      "results/figures/rq3",
+      "--top-k",
+      "5"
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "{\n  \"created_at_utc\": \"2026-04-12T03:39:44.687759+00:00\",\n  \"figures\": [\n    {\n      \"frequency\": \"364\",\n      \"motif\": \"nodes:gradual_escalation,harmful_intent|edges:gradual_escalation>harmful_intent\",\n      \"path\": \"results/figures/rq3/motif_rank_01.png\",\n      \"rank\": \"1\"\n    },\n    {\n      \"frequency\": \"251\",\n      \"motif\": \"nodes:gradual_escalation,roleplay|edges:roleplay>gradual_escalation\",\n      \"path\": \"results/figures/rq3/motif_rank_02.png\",\n      \"rank\": \"2\"\n    },\n    {\n      \"frequency\": \"216\",\n      \"motif\": \"nodes:gradual_escalation,instruction_override|edges:gradual_escalation>instruction_override\",\n      \"path\": \"results/figures/rq3/motif_rank_03.png\",\n      \"rank\": \"3\"\n    },\n    {\n      \"frequency\": \"171\",\n      \"motif\": \"nodes:gradual_escalation,harmful_intent,roleplay|edges:gradual_escalation>harmful_intent\",\n      \"path\": \"results/figures/rq3/motif_rank_04.png\",\n      \"rank\": \"4\"\n    },\n    {\n      \"frequency\": \"135\",\n      \"motif\": \"nodes:authority_claim,gradual_escalation|edges:authority_claim>gradual_escalation\",\n      \"path\": \"results/figures/rq3/motif_rank_05.png\",\n      \"rank\": \"5\"\n    }\n  ],\n  \"motif_table\": \"results/tables/table_4_top_motifs_real.csv\",\n  \"prompt_text_logged\": false\n}\n"
+  },
+  {
+    "command": [
+      "/Users/pradeep/Documents/New project/graph-jailbreak-bench/.venv/bin/python",
+      "scripts/export_rq_results.py"
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "{\n  \"created_at_utc\": \"2026-04-12T03:39:44.770867+00:00\",\n  \"dataset_enough_for_baseline_runs\": true,\n  \"dataset_enough_for_final_all_rqs\": false,\n  \"dataset_summary\": {\n    \"by_attack_type\": {\n      \"encoding\": 14,\n      \"none\": 600,\n      \"obfuscation\": 187,\n      \"reasoning\": 2072,\n      \"roleplay\": 726\n    },\n    \"by_difficulty\": {\n      \"easy\": 3009,\n      \"hard\": 324,\n      \"medium\": 266\n    },\n    \"by_source_dataset\": {\n      \"AdvBench\": 520,\n      \"HarmBench\": 391,\n      \"JailbreakBench\": 189,\n      \"JailbreakDB-Jailbreak\": 12,\n      \"JailbreakDB-Regular\": 500,\n      \"JailbreakV-28K\": 1687,\n      \"JailbreakV-28K-RedTeam\": 300\n    },\n    \"by_type\": {\n      \"jailbreak\": 2999,\n      \"safe\": 600\n    },\n    \"dataset_path\": \"data/processed/gjb_real_v1.jsonl\",\n    \"model_gpt4_success_labels\": 0,\n    \"model_llama_success_labels\": 0,\n    \"multiturn_rows\": 0,\n    \"prompt_text_logged\": false,\n    \"safe_subgroups\": {\n      \"disinformation\": 10,\n      \"economic_harm\": 10,\n      \"expert_advice\": 10,\n      \"fraud_deception\": 10,\n      \"government_decision_making\": 10,\n      \"harassment_discrimination\": 10,\n      \"jailbreakdb_regular\": 500,\n      \"malware_hacking\": 10,\n      \"physical_harm\": 10,\n      \"privacy\": 10,\n      \"sexual_adult_content\": 10\n    },\n    \"total_rows\": 3599\n  },\n  \"rq_status\": {\n    \"E5\": \"blocked_pending_real_multiturn_variants_and_success_labels\",\n    \"RQ0\": \"blocked_pending_human_annotation\",\n    \"RQ1\": \"baseline_results_available_not_final\",\n    \"RQ2\": \"blocked_pending_cross_model_success_labels\",\n    \"RQ3\": \"frequency_results_available_success_rate_blocked\",\n    \"RQ4\": \"baseline_results_available_safe_grouping_not_final\"\n  },\n  \"why\": [\n    \"The expanded dataset has 3,599 rows, within the workbook's overall target range.\",\n    \"It has 2,999 harmful/jailbreak rows, within the workbook's 2,000-3,000 target range.\",\n    \"It has 600 safe rows, matching the workbook safe-count target.\",\n    \"It still lacks human annotator labels, model success labels, and real multi-turn rows.\"\n  ]\n}\n"
+  },
+  {
+    "command": [
+      "/Users/pradeep/Documents/New project/graph-jailbreak-bench/.venv/bin/python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests"
+    ],
+    "returncode": 0,
+    "stderr": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.000s\n\nOK\n",
+    "stdout": ""
+  }
+]

@@ -1,0 +1,20 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.DS_Store
+
+# Local environments and caches
+.venv/
+.pip-cache/
+.hf-cache/
+
+# Real benchmark data is reproducible from configs/data_sources.json.
+# Do not push raw/processed prompt datasets to the public repo.
+data/raw/
+data/processed/*.jsonl
+data/**/*.DS_Store
+
+# Cached embedding arrays can be regenerated from scripts/run_e1_embedding_baselines.py.
+results/rq/rq1/embedding_baseline/*.npz

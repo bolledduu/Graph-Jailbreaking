@@ -1,0 +1,10 @@
+[project]
+name = "graph-jailbreak-bench"
+version = "0.1.0"
+description = "Graph-based jailbreak benchmark research codebase"
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
