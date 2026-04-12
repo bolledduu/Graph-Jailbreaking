@@ -1,0 +1,8 @@
+model,split,stratum,n,accuracy,precision,recall,f1,roc_auc,brier,heldout_source,heldout_rows,contrast_rows_added,contrast_set_used
+Text TFIDF LR,leave_one_source_out,heldout:AdvBench,1040,0.880769,0.997487,0.763462,0.864924,0.996993,0.117889,AdvBench,520,520,True
+Text TFIDF LR,leave_one_source_out,heldout:HarmBench,782,0.654731,0.991870,0.312020,0.474708,0.812540,0.230971,HarmBench,391,391,True
+Text TFIDF LR,leave_one_source_out,heldout:JailbreakBench,189,0.523810,0.497110,0.966292,0.656489,0.645056,0.286216,JailbreakBench,189,0,False
+Text TFIDF LR,leave_one_source_out,heldout:JailbreakDB-Jailbreak,24,0.541667,1.000000,0.083333,0.153846,0.743056,0.283243,JailbreakDB-Jailbreak,12,12,True
+Text TFIDF LR,leave_one_source_out,heldout:JailbreakDB-Regular,1000,0.491000,0.495441,0.978000,0.657700,0.676480,0.365616,JailbreakDB-Regular,500,500,True
+Text TFIDF LR,leave_one_source_out,heldout:JailbreakV-28K,2287,0.378662,0.893491,0.179016,0.298272,0.686905,0.356237,JailbreakV-28K,1687,600,True
+Text TFIDF LR,leave_one_source_out,heldout:JailbreakV-28K-RedTeam,600,0.668333,0.971963,0.346667,0.511057,0.944422,0.179032,JailbreakV-28K-RedTeam,300,300,True

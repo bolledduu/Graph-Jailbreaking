@@ -1,0 +1,8 @@
+Source dataset	Rows
+AdvBench	520
+HarmBench	391
+JailbreakBench	189
+JailbreakDB-Jailbreak	12
+JailbreakDB-Regular	500
+JailbreakV-28K	1687
+JailbreakV-28K-RedTeam	300

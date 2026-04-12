@@ -1,0 +1,32 @@
+{
+  "duplicate_prompt_hashes_between_train_test": 0,
+  "prompt_text_logged": false,
+  "test_rows": 719,
+  "test_source_counts": {
+    "AdvBench": 104,
+    "HarmBench": 78,
+    "JailbreakBench": 38,
+    "JailbreakDB-Jailbreak": 2,
+    "JailbreakDB-Regular": 100,
+    "JailbreakV-28K": 337,
+    "JailbreakV-28K-RedTeam": 60
+  },
+  "test_type_counts": {
+    "jailbreak": 599,
+    "safe": 120
+  },
+  "train_rows": 2880,
+  "train_source_counts": {
+    "AdvBench": 416,
+    "HarmBench": 313,
+    "JailbreakBench": 151,
+    "JailbreakDB-Jailbreak": 10,
+    "JailbreakDB-Regular": 400,
+    "JailbreakV-28K": 1350,
+    "JailbreakV-28K-RedTeam": 240
+  },
+  "train_type_counts": {
+    "jailbreak": 2400,
+    "safe": 480
+  }
+}

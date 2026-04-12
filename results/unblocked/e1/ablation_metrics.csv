@@ -1,0 +1,67 @@
+model,split,stratum,n,accuracy,precision,recall,f1,roc_auc,brier
+Text TFIDF LR,source_balanced_test,overall,719,0.920723,0.978799,0.924875,0.951073,0.972927,0.073045
+Text TFIDF LR,source_balanced_test,easy,591,0.910321,0.972851,0.912951,0.941950,0.968524,0.083020
+Text TFIDF LR,source_balanced_test,medium,70,0.942857,1.000000,0.942857,0.970588,NA,NA
+Text TFIDF LR,source_balanced_test,hard,58,1.000000,1.000000,1.000000,1.000000,NA,NA
+Text TFIDF LR,source_balanced_test,source:AdvBench,104,1.000000,1.000000,1.000000,1.000000,NA,NA
+Text TFIDF LR,source_balanced_test,source:HarmBench,78,0.756410,1.000000,0.756410,0.861314,NA,NA
+Text TFIDF LR,source_balanced_test,source:JailbreakBench,38,0.657895,0.631579,0.666667,0.648649,0.719444,0.219090
+Text TFIDF LR,source_balanced_test,source:JailbreakDB-Jailbreak,2,0.000000,0.000000,0.000000,0.000000,NA,NA
+Text TFIDF LR,source_balanced_test,source:JailbreakDB-Regular,100,0.950000,0.000000,0.000000,0.000000,NA,NA
+Text TFIDF LR,source_balanced_test,source:JailbreakV-28K,337,0.988131,1.000000,0.988131,0.994030,NA,NA
+Text TFIDF LR,source_balanced_test,source:JailbreakV-28K-RedTeam,60,0.766667,1.000000,0.766667,0.867925,NA,NA
+Graph Structural LR,source_balanced_test,overall,719,0.435327,1.000000,0.322204,0.487374,0.661102,0.225740
+Graph Structural LR,source_balanced_test,easy,591,0.313029,1.000000,0.138004,0.242537,0.569002,0.274630
+Graph Structural LR,source_balanced_test,medium,70,1.000000,1.000000,1.000000,1.000000,NA,NA
+Graph Structural LR,source_balanced_test,hard,58,1.000000,1.000000,1.000000,1.000000,NA,NA
+Graph Structural LR,source_balanced_test,source:AdvBench,104,0.048077,1.000000,0.048077,0.091743,NA,NA
+Graph Structural LR,source_balanced_test,source:HarmBench,78,0.089744,1.000000,0.089744,0.164706,NA,NA
+Graph Structural LR,source_balanced_test,source:JailbreakBench,38,0.526316,0.000000,0.000000,0.000000,0.500000,0.253636
+Graph Structural LR,source_balanced_test,source:JailbreakDB-Jailbreak,2,1.000000,1.000000,1.000000,1.000000,NA,NA
+Graph Structural LR,source_balanced_test,source:JailbreakDB-Regular,100,1.000000,0.000000,0.000000,0.000000,NA,NA
+Graph Structural LR,source_balanced_test,source:JailbreakV-28K,337,0.531157,1.000000,0.531157,0.693798,NA,NA
+Graph Structural LR,source_balanced_test,source:JailbreakV-28K-RedTeam,60,0.000000,0.000000,0.000000,0.000000,NA,NA
+Graph NoIntent LR,source_balanced_test,overall,719,0.877608,1.000000,0.853088,0.920721,0.926544,0.095537
+Graph NoIntent LR,source_balanced_test,easy,591,0.851100,1.000000,0.813163,0.896956,0.906582,0.116228
+Graph NoIntent LR,source_balanced_test,medium,70,1.000000,1.000000,1.000000,1.000000,NA,NA
+Graph NoIntent LR,source_balanced_test,hard,58,1.000000,1.000000,1.000000,1.000000,NA,NA
+Graph NoIntent LR,source_balanced_test,source:AdvBench,104,0.509615,1.000000,0.509615,0.675159,NA,NA
+Graph NoIntent LR,source_balanced_test,source:HarmBench,78,0.871795,1.000000,0.871795,0.931507,NA,NA
+Graph NoIntent LR,source_balanced_test,source:JailbreakBench,38,0.894737,1.000000,0.777778,0.875000,0.888889,0.088561
+Graph NoIntent LR,source_balanced_test,source:JailbreakDB-Jailbreak,2,1.000000,1.000000,1.000000,1.000000,NA,NA
+Graph NoIntent LR,source_balanced_test,source:JailbreakDB-Regular,100,1.000000,0.000000,0.000000,0.000000,NA,NA
+Graph NoIntent LR,source_balanced_test,source:JailbreakV-28K,337,0.949555,1.000000,0.949555,0.974125,NA,NA
+Graph NoIntent LR,source_balanced_test,source:JailbreakV-28K-RedTeam,60,0.900000,1.000000,0.900000,0.947368,NA,NA
+Hybrid TFIDF+Graph NoIntent LR,source_balanced_test,overall,719,0.936022,0.998198,0.924875,0.960139,0.995186,0.040811
+Hybrid TFIDF+Graph NoIntent LR,source_balanced_test,easy,591,0.922166,0.997658,0.904459,0.948775,0.993878,0.049650
+Hybrid TFIDF+Graph NoIntent LR,source_balanced_test,medium,70,1.000000,1.000000,1.000000,1.000000,NA,NA
+Hybrid TFIDF+Graph NoIntent LR,source_balanced_test,hard,58,1.000000,1.000000,1.000000,1.000000,NA,NA
+Hybrid TFIDF+Graph NoIntent LR,source_balanced_test,source:AdvBench,104,0.817308,1.000000,0.817308,0.899471,NA,NA
+Hybrid TFIDF+Graph NoIntent LR,source_balanced_test,source:HarmBench,78,0.884615,1.000000,0.884615,0.938776,NA,NA
+Hybrid TFIDF+Graph NoIntent LR,source_balanced_test,source:JailbreakBench,38,0.868421,0.933333,0.777778,0.848485,0.977778,0.070855
+Hybrid TFIDF+Graph NoIntent LR,source_balanced_test,source:JailbreakDB-Jailbreak,2,1.000000,1.000000,1.000000,1.000000,NA,NA
+Hybrid TFIDF+Graph NoIntent LR,source_balanced_test,source:JailbreakDB-Regular,100,1.000000,0.000000,0.000000,0.000000,NA,NA
+Hybrid TFIDF+Graph NoIntent LR,source_balanced_test,source:JailbreakV-28K,337,0.979228,1.000000,0.979228,0.989505,NA,NA
+Hybrid TFIDF+Graph NoIntent LR,source_balanced_test,source:JailbreakV-28K-RedTeam,60,0.900000,1.000000,0.900000,0.947368,NA,NA
+SentenceEmbedding LR,source_balanced_test,overall,719,0.902643,0.971480,0.909850,0.939655,0.950863,0.077835
+SentenceEmbedding LR,source_balanced_test,easy,591,0.886633,0.963303,0.891720,0.926130,0.944197,0.089103
+SentenceEmbedding LR,source_balanced_test,medium,70,0.971429,1.000000,0.971429,0.985507,NA,NA
+SentenceEmbedding LR,source_balanced_test,hard,58,0.982759,1.000000,0.982759,0.991304,NA,NA
+SentenceEmbedding LR,source_balanced_test,source:AdvBench,104,0.990385,1.000000,0.990385,0.995169,NA,NA
+SentenceEmbedding LR,source_balanced_test,source:HarmBench,78,0.730769,1.000000,0.730769,0.844444,NA,NA
+SentenceEmbedding LR,source_balanced_test,source:JailbreakBench,38,0.736842,0.681818,0.833333,0.750000,0.733333,0.220699
+SentenceEmbedding LR,source_balanced_test,source:JailbreakDB-Jailbreak,2,0.500000,1.000000,0.500000,0.666667,NA,NA
+SentenceEmbedding LR,source_balanced_test,source:JailbreakDB-Regular,100,0.910000,0.000000,0.000000,0.000000,NA,NA
+SentenceEmbedding LR,source_balanced_test,source:JailbreakV-28K,337,0.991098,1.000000,0.991098,0.995529,NA,NA
+SentenceEmbedding LR,source_balanced_test,source:JailbreakV-28K-RedTeam,60,0.583333,1.000000,0.583333,0.736842,NA,NA
+SentenceEmbedding+Graph Structural LR,source_balanced_test,overall,719,0.908206,0.975045,0.913189,0.943103,0.961408,0.071734
+SentenceEmbedding+Graph Structural LR,source_balanced_test,easy,591,0.888325,0.967667,0.889597,0.926991,0.950955,0.087243
+SentenceEmbedding+Graph Structural LR,source_balanced_test,medium,70,1.000000,1.000000,1.000000,1.000000,NA,NA
+SentenceEmbedding+Graph Structural LR,source_balanced_test,hard,58,1.000000,1.000000,1.000000,1.000000,NA,NA
+SentenceEmbedding+Graph Structural LR,source_balanced_test,source:AdvBench,104,0.980769,1.000000,0.980769,0.990291,NA,NA
+SentenceEmbedding+Graph Structural LR,source_balanced_test,source:HarmBench,78,0.769231,1.000000,0.769231,0.869565,NA,NA
+SentenceEmbedding+Graph Structural LR,source_balanced_test,source:JailbreakBench,38,0.710526,0.652174,0.833333,0.731707,0.711111,0.224825
+SentenceEmbedding+Graph Structural LR,source_balanced_test,source:JailbreakDB-Jailbreak,2,1.000000,1.000000,1.000000,1.000000,NA,NA
+SentenceEmbedding+Graph Structural LR,source_balanced_test,source:JailbreakDB-Regular,100,0.940000,0.000000,0.000000,0.000000,NA,NA
+SentenceEmbedding+Graph Structural LR,source_balanced_test,source:JailbreakV-28K,337,0.994065,1.000000,0.994065,0.997024,NA,NA
+SentenceEmbedding+Graph Structural LR,source_balanced_test,source:JailbreakV-28K-RedTeam,60,0.550000,1.000000,0.550000,0.709677,NA,NA

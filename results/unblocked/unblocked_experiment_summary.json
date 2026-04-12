@@ -1,0 +1,50 @@
+{
+  "balanced_dataset": "data/processed/gjb_real_v1_rq4_balanced.jsonl",
+  "created_at_utc": "2026-04-12T03:51:58.716012+00:00",
+  "dataset": "data/processed/gjb_real_v1.jsonl",
+  "experiments_completed": [
+    "source_balanced_detection_ablation",
+    "bootstrap_confidence_intervals",
+    "leave_one_source_out_detection",
+    "deduplication_leakage_audit",
+    "error_analysis",
+    "calibration_bins",
+    "rq3_motif_enrichment",
+    "rq4_fpr_wilson_confidence_intervals",
+    "graph_feature_distribution_plots"
+  ],
+  "output_dir": "results/unblocked",
+  "prompt_text_logged": false,
+  "source_balanced_split_summary": {
+    "duplicate_prompt_hashes_between_train_test": 0,
+    "prompt_text_logged": false,
+    "test_rows": 719,
+    "test_source_counts": {
+      "AdvBench": 104,
+      "HarmBench": 78,
+      "JailbreakBench": 38,
+      "JailbreakDB-Jailbreak": 2,
+      "JailbreakDB-Regular": 100,
+      "JailbreakV-28K": 337,
+      "JailbreakV-28K-RedTeam": 60
+    },
+    "test_type_counts": {
+      "jailbreak": 599,
+      "safe": 120
+    },
+    "train_rows": 2880,
+    "train_source_counts": {
+      "AdvBench": 416,
+      "HarmBench": 313,
+      "JailbreakBench": 151,
+      "JailbreakDB-Jailbreak": 10,
+      "JailbreakDB-Regular": 400,
+      "JailbreakV-28K": 1350,
+      "JailbreakV-28K-RedTeam": 240
+    },
+    "train_type_counts": {
+      "jailbreak": 2400,
+      "safe": 480
+    }
+  }
+}

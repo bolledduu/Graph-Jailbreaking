@@ -1,6 +1,6 @@
 # RQ Results Summary
 
-Created UTC: 2026-04-12T03:39:44.770867+00:00
+Created UTC: 2026-04-12T03:51:58.902197+00:00
 Dataset: data/processed/gjb_real_v1.jsonl
 Rows: 3599
 By type: {'jailbreak': 2999, 'safe': 600}

@@ -1,0 +1,5 @@
+Metric	Value
+All sources verified	True
+Commands all passed	True
+Raw prompt text duplicated in logs	False
+Proof summary path	logs/proof/SUMMARY.md

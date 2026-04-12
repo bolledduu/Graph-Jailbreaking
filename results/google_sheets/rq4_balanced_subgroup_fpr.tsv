@@ -1,0 +1,13 @@
+Method	Subgroup	N	FPR
+Text-Only Lexical Baseline	creative_writing	100	0.0200
+Text-Only Lexical Baseline	formal_academic	100	0.0300
+Text-Only Lexical Baseline	informal_colloquial	100	0.0400
+Text-Only Lexical Baseline	medical_health	100	0.0400
+Text-Only Lexical Baseline	non_native_english	100	0.0300
+Text-Only Lexical Baseline	security_technical	100	0.0500
+Graph-Based Baseline	creative_writing	100	0.0000
+Graph-Based Baseline	formal_academic	100	0.0000
+Graph-Based Baseline	informal_colloquial	100	0.0000
+Graph-Based Baseline	medical_health	100	0.0000
+Graph-Based Baseline	non_native_english	100	0.0000
+Graph-Based Baseline	security_technical	100	0.0000

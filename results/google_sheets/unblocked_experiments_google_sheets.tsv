@@ -1,0 +1,103 @@
+UNBLOCKED_E1_SOURCE_BALANCED_ABLATION_OVERALL
+Model	N	Accuracy	Precision	Recall	F1	ROC-AUC	Brier
+Text TFIDF LR	719	0.920723	0.978799	0.924875	0.951073	0.972927	0.073045
+Graph Structural LR	719	0.435327	1.000000	0.322204	0.487374	0.661102	0.225740
+Graph NoIntent LR	719	0.877608	1.000000	0.853088	0.920721	0.926544	0.095537
+Hybrid TFIDF+Graph NoIntent LR	719	0.936022	0.998198	0.924875	0.960139	0.995186	0.040811
+SentenceEmbedding LR	719	0.902643	0.971480	0.909850	0.939655	0.950863	0.077835
+SentenceEmbedding+Graph Structural LR	719	0.908206	0.975045	0.913189	0.943103	0.961408	0.071734
+
+UNBLOCKED_E1_BOOTSTRAP_95CI
+Model	Metric	Mean	CI95 Low	CI95 High	Bootstrap N
+Text TFIDF LR	accuracy	0.920295	0.901217	0.940195	1000
+Text TFIDF LR	brier	0.073200	0.065245	0.081381	1000
+Text TFIDF LR	f1	0.950763	0.938289	0.963282	1000
+Text TFIDF LR	precision	0.978458	0.965390	0.989548	1000
+Text TFIDF LR	recall	0.924672	0.903936	0.945318	1000
+Text TFIDF LR	roc_auc	0.972777	0.959545	0.983841	1000
+Graph Structural LR	accuracy	0.435103	0.397775	0.472879	1000
+Graph Structural LR	brier	0.225890	0.214243	0.237542	1000
+Graph Structural LR	f1	0.486340	0.442967	0.530213	1000
+Graph Structural LR	precision	1.000000	1.000000	1.000000	1000
+Graph Structural LR	recall	0.321594	0.284495	0.360742	1000
+Graph Structural LR	roc_auc	0.660797	0.642247	0.680371	1000
+Graph NoIntent LR	accuracy	0.878122	0.855355	0.901252	1000
+Graph NoIntent LR	brier	0.095139	0.077570	0.112605	1000
+Graph NoIntent LR	f1	0.921043	0.904935	0.936732	1000
+Graph NoIntent LR	precision	1.000000	1.000000	1.000000	1000
+Graph NoIntent LR	recall	0.853740	0.826376	0.880993	1000
+Graph NoIntent LR	roc_auc	0.926870	0.913188	0.940496	1000
+Hybrid TFIDF+Graph NoIntent LR	accuracy	0.936473	0.917942	0.952712	1000
+Hybrid TFIDF+Graph NoIntent LR	brier	0.040561	0.032039	0.050009	1000
+Hybrid TFIDF+Graph NoIntent LR	f1	0.960375	0.948379	0.970565	1000
+Hybrid TFIDF+Graph NoIntent LR	precision	0.998203	0.994505	1.000000	1000
+Hybrid TFIDF+Graph NoIntent LR	recall	0.925366	0.903810	0.944821	1000
+Hybrid TFIDF+Graph NoIntent LR	roc_auc	0.995276	0.991224	0.998319	1000
+SentenceEmbedding LR	accuracy	0.903171	0.881745	0.923505	1000
+SentenceEmbedding LR	brier	0.077444	0.066444	0.089036	1000
+SentenceEmbedding LR	f1	0.939968	0.925758	0.953490	1000
+SentenceEmbedding LR	precision	0.971901	0.956522	0.984219	1000
+SentenceEmbedding LR	recall	0.910159	0.886282	0.932457	1000
+SentenceEmbedding LR	roc_auc	0.951579	0.931478	0.969969	1000
+SentenceEmbedding+Graph Structural LR	accuracy	0.908035	0.887309	0.927677	1000
+SentenceEmbedding+Graph Structural LR	brier	0.071660	0.061584	0.083067	1000
+SentenceEmbedding+Graph Structural LR	f1	0.942917	0.928885	0.955844	1000
+SentenceEmbedding+Graph Structural LR	precision	0.974892	0.961266	0.987296	1000
+SentenceEmbedding+Graph Structural LR	recall	0.913056	0.890388	0.934455	1000
+SentenceEmbedding+Graph Structural LR	roc_auc	0.961718	0.942485	0.976541	1000
+
+UNBLOCKED_E1_LEAVE_ONE_SOURCE_OUT
+Heldout Source	N	Accuracy	Precision	Recall	F1	ROC-AUC	Contrast Rows Added
+AdvBench	1040	0.880769	0.997487	0.763462	0.864924	0.996993	520
+HarmBench	782	0.654731	0.991870	0.312020	0.474708	0.812540	391
+JailbreakBench	189	0.523810	0.497110	0.966292	0.656489	0.645056	0
+JailbreakDB-Jailbreak	24	0.541667	1.000000	0.083333	0.153846	0.743056	12
+JailbreakDB-Regular	1000	0.491000	0.495441	0.978000	0.657700	0.676480	500
+JailbreakV-28K	2287	0.378662	0.893491	0.179016	0.298272	0.686905	600
+JailbreakV-28K-RedTeam	600	0.668333	0.971963	0.346667	0.511057	0.944422	300
+
+UNBLOCKED_LEAKAGE_AUDIT
+Metric	Value
+Train rows	2880
+Test rows	719
+Duplicate prompt hashes between train/test	0
+Prompt text logged	False
+
+UNBLOCKED_RQ3_MOTIF_ENRICHMENT_TOP20
+Motif	Jailbreak Count	Safe Count	Jailbreak Rate	Safe Rate	Smoothed Odds Ratio
+nodes:gradual_escalation,harmful_intent|edges:gradual_escalation>harmful_intent	364	0	0.121374	0.000000	166.103017
+nodes:gradual_escalation,roleplay|edges:roleplay>gradual_escalation	251	0	0.083695	0.000000	109.896853
+nodes:gradual_escalation,instruction_override|edges:gradual_escalation>instruction_override	216	0	0.072024	0.000000	93.413508
+nodes:gradual_escalation,harmful_intent,roleplay|edges:gradual_escalation>harmful_intent	171	0	0.057019	0.000000	72.820046
+nodes:authority_claim,gradual_escalation|edges:authority_claim>gradual_escalation	135	0	0.045015	0.000000	56.811136
+nodes:fiction,roleplay|edges:roleplay>fiction	122	0	0.040680	0.000000	51.128584
+nodes:authority_claim,roleplay|edges:roleplay>authority_claim	118	0	0.039346	0.000000	49.390422
+nodes:authority_claim,gradual_escalation,roleplay|edges:authority_claim>gradual_escalation,roleplay>authority_claim	116	0	0.038680	0.000000	48.523149
+nodes:authority_claim,harmful_intent,roleplay|edges:roleplay>authority_claim	104	0	0.034678	0.000000	43.344673
+nodes:authority_claim,gradual_escalation,harmful_intent|edges:authority_claim>gradual_escalation,gradual_escalation>harmful_intent	102	0	0.034011	0.000000	42.485764
+nodes:gradual_escalation,hypothetical|edges:hypothetical>gradual_escalation	101	0	0.033678	0.000000	42.056753
+nodes:fiction,hypothetical|edges:fiction>hypothetical	101	0	0.033678	0.000000	42.056753
+nodes:gradual_escalation,hypothetical,roleplay|edges:hypothetical>gradual_escalation	100	0	0.033344	0.000000	41.628039
+nodes:fiction,hypothetical,roleplay|edges:fiction>hypothetical,roleplay>fiction	100	0	0.033344	0.000000	41.628039
+nodes:fiction,gradual_escalation,roleplay|edges:roleplay>fiction	100	0	0.033344	0.000000	41.628039
+nodes:gradual_escalation,harmful_intent,roleplay|edges:gradual_escalation>harmful_intent,roleplay>gradual_escalation	98	0	0.032678	0.000000	40.771498
+nodes:authority_claim,gradual_escalation,harmful_intent,roleplay|edges:authority_claim>gradual_escalation,gradual_escalation>harmful_intent,roleplay>authority_claim	98	0	0.032678	0.000000	40.771498
+nodes:fiction,gradual_escalation,hypothetical,roleplay|edges:fiction>hypothetical,hypothetical>gradual_escalation,roleplay>fiction	98	0	0.032678	0.000000	40.771498
+nodes:fiction,gradual_escalation,hypothetical|edges:fiction>hypothetical,hypothetical>gradual_escalation	98	0	0.032678	0.000000	40.771498
+nodes:gradual_escalation,instruction_override,roleplay|edges:gradual_escalation>instruction_override,roleplay>gradual_escalation	88	0	0.029343	0.000000	36.506440
+
+UNBLOCKED_RQ4_FPR_WILSON_95CI
+Method	Subgroup	N	False Positives	FPR	CI95 Low	CI95 High
+Text-Only Lexical Baseline	creative_writing	100	2	0.020000	0.005502	0.070013
+Text-Only Lexical Baseline	formal_academic	100	3	0.030000	0.010254	0.084521
+Text-Only Lexical Baseline	informal_colloquial	100	4	0.040000	0.015663	0.098372
+Text-Only Lexical Baseline	medical_health	100	4	0.040000	0.015663	0.098372
+Text-Only Lexical Baseline	non_native_english	100	3	0.030000	0.010254	0.084521
+Text-Only Lexical Baseline	security_technical	100	5	0.050000	0.021543	0.111752
+Graph-Based Baseline	creative_writing	100	0	0.000000	0.000000	0.036995
+Graph-Based Baseline	formal_academic	100	0	0.000000	0.000000	0.036995
+Graph-Based Baseline	informal_colloquial	100	0	0.000000	0.000000	0.036995
+Graph-Based Baseline	medical_health	100	0	0.000000	0.000000	0.036995
+Graph-Based Baseline	non_native_english	100	0	0.000000	0.000000	0.036995
+Graph-Based Baseline	security_technical	100	0	0.000000	0.000000	0.036995
+

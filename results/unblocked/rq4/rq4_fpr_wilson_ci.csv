@@ -1,0 +1,13 @@
+method,subgroup,n,false_positives,fpr,fpr_ci95_low,fpr_ci95_high
+Text-Only Lexical Baseline,creative_writing,100,2,0.020000,0.005502,0.070013
+Text-Only Lexical Baseline,formal_academic,100,3,0.030000,0.010254,0.084521
+Text-Only Lexical Baseline,informal_colloquial,100,4,0.040000,0.015663,0.098372
+Text-Only Lexical Baseline,medical_health,100,4,0.040000,0.015663,0.098372
+Text-Only Lexical Baseline,non_native_english,100,3,0.030000,0.010254,0.084521
+Text-Only Lexical Baseline,security_technical,100,5,0.050000,0.021543,0.111752
+Graph-Based Baseline,creative_writing,100,0,0.000000,0.000000,0.036995
+Graph-Based Baseline,formal_academic,100,0,0.000000,0.000000,0.036995
+Graph-Based Baseline,informal_colloquial,100,0,0.000000,0.000000,0.036995
+Graph-Based Baseline,medical_health,100,0,0.000000,0.000000,0.036995
+Graph-Based Baseline,non_native_english,100,0,0.000000,0.000000,0.036995
+Graph-Based Baseline,security_technical,100,0,0.000000,0.000000,0.036995

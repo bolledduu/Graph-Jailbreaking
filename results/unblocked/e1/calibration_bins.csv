@@ -1,0 +1,46 @@
+model,bin,mean_predicted_probability,fraction_positive
+Text TFIDF LR,1,0.054614,0.000000
+Text TFIDF LR,2,0.161113,0.000000
+Text TFIDF LR,3,0.257290,0.170732
+Text TFIDF LR,4,0.351035,0.333333
+Text TFIDF LR,5,0.456811,0.682927
+Text TFIDF LR,6,0.556321,0.854167
+Text TFIDF LR,7,0.654619,0.967742
+Text TFIDF LR,8,0.759125,0.961538
+Text TFIDF LR,9,0.854909,1.000000
+Text TFIDF LR,10,0.944721,1.000000
+Graph Structural LR,1,0.407890,0.771863
+Graph Structural LR,2,0.998385,1.000000
+Graph NoIntent LR,1,0.130530,0.423077
+Graph NoIntent LR,2,0.692933,1.000000
+Graph NoIntent LR,3,0.996078,1.000000
+Hybrid TFIDF+Graph NoIntent LR,1,0.054307,0.023256
+Hybrid TFIDF+Graph NoIntent LR,2,0.136678,0.184211
+Hybrid TFIDF+Graph NoIntent LR,3,0.243002,0.769231
+Hybrid TFIDF+Graph NoIntent LR,4,0.347949,0.941176
+Hybrid TFIDF+Graph NoIntent LR,5,0.461573,1.000000
+Hybrid TFIDF+Graph NoIntent LR,6,0.542670,0.933333
+Hybrid TFIDF+Graph NoIntent LR,7,0.664682,1.000000
+Hybrid TFIDF+Graph NoIntent LR,8,0.740969,1.000000
+Hybrid TFIDF+Graph NoIntent LR,9,0.805269,1.000000
+Hybrid TFIDF+Graph NoIntent LR,10,0.996007,1.000000
+SentenceEmbedding LR,1,0.046011,0.080000
+SentenceEmbedding LR,2,0.140939,0.257143
+SentenceEmbedding LR,3,0.246146,0.551724
+SentenceEmbedding LR,4,0.357891,0.578947
+SentenceEmbedding LR,5,0.442454,0.560000
+SentenceEmbedding LR,6,0.549273,0.827586
+SentenceEmbedding LR,7,0.646662,0.883721
+SentenceEmbedding LR,8,0.750508,0.962264
+SentenceEmbedding LR,9,0.855968,0.990991
+SentenceEmbedding LR,10,0.956964,0.990769
+SentenceEmbedding+Graph Structural LR,1,0.048459,0.018868
+SentenceEmbedding+Graph Structural LR,2,0.153322,0.317073
+SentenceEmbedding+Graph Structural LR,3,0.243356,0.450000
+SentenceEmbedding+Graph Structural LR,4,0.342460,0.619048
+SentenceEmbedding+Graph Structural LR,5,0.446487,0.695652
+SentenceEmbedding+Graph Structural LR,6,0.545532,0.793103
+SentenceEmbedding+Graph Structural LR,7,0.656301,0.925000
+SentenceEmbedding+Graph Structural LR,8,0.750361,0.983051
+SentenceEmbedding+Graph Structural LR,9,0.857867,0.969388
+SentenceEmbedding+Graph Structural LR,10,0.973487,0.997015

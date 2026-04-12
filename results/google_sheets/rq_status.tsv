@@ -1,0 +1,7 @@
+RQ/Experiment	Status	Meaning
+RQ0 Annotation Validation	Blocked	Needs filled human annotator templates
+RQ1 Graph vs Text Detection	Baseline complete	ML and embedding baselines run; not final BERT/GNN paper result
+RQ2 Transferability Prediction	Blocked	Needs real cross-model success labels
+RQ3 Motif Discovery	Partial complete	Motif frequency and figures done; success rates need model success labels
+RQ4 Fairness / Overblocking	Baseline complete	Six-group heuristic safe-subgroup baseline done; human review recommended
+E5 Multi-turn vs Single-turn	Blocked	Needs real multi-turn variants and success labels
