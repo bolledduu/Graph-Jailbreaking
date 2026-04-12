@@ -1,0 +1,10 @@
+{
+  "created_at_utc": "2026-04-12T07:30:20.531868+00:00",
+  "dataset": "data/processed/gjb_real_v1.jsonl",
+  "experiment": "E5",
+  "labeled_counts_by_type": {},
+  "prompt_text_logged": false,
+  "reason": "No labeled single-turn jailbreak rows found for model_llama_success.",
+  "status": "blocked_pending_real_multiturn_variants_and_success_labels",
+  "success_field": "model_llama_success"
+}

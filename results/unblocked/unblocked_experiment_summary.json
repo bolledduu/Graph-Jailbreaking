@@ -1,6 +1,6 @@
 {
   "balanced_dataset": "data/processed/gjb_real_v1_rq4_balanced.jsonl",
-  "created_at_utc": "2026-04-12T03:51:58.716012+00:00",
+  "created_at_utc": "2026-04-12T07:30:18.863601+00:00",
   "dataset": "data/processed/gjb_real_v1.jsonl",
   "experiments_completed": [
     "source_balanced_detection_ablation",

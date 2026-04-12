@@ -1,6 +1,7 @@
 {
-  "created_at_utc": "2026-04-12T03:51:58.902197+00:00",
+  "created_at_utc": "2026-04-12T07:30:20.675942+00:00",
   "experiment": "E5",
+  "label_dependent_runner": "scripts/run_e5_asr_analysis.py",
   "name": "Multi-Turn vs Single-Turn",
   "needed_to_complete": [
     "Collect or construct real multi-turn variants with provenance.",
@@ -12,9 +13,19 @@
     {
       "experiment": "E5 Multi-Turn vs Single-Turn ASR",
       "n_labeled": "0",
-      "reason": "Real source CSVs do not include attack success labels or multi-turn variants.",
+      "reason": "No labeled single-turn jailbreak rows found for model_llama_success.",
       "status": "blocked"
     }
   ],
+  "runner_status": {
+    "created_at_utc": "2026-04-12T07:30:20.531868+00:00",
+    "dataset": "data/processed/gjb_real_v1.jsonl",
+    "experiment": "E5",
+    "labeled_counts_by_type": {},
+    "prompt_text_logged": false,
+    "reason": "No labeled single-turn jailbreak rows found for model_llama_success.",
+    "status": "blocked_pending_real_multiturn_variants_and_success_labels",
+    "success_field": "model_llama_success"
+  },
   "status": "blocked_pending_real_multiturn_variants_and_success_labels"
 }

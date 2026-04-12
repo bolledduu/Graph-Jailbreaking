@@ -7,14 +7,14 @@
     "results_summary": "logs/proof/results_summary.json",
     "source_verification": "logs/proof/source_verification.json"
   },
-  "created_at_utc": "2026-04-12T03:51:58.947158+00:00",
+  "created_at_utc": "2026-04-12T07:30:20.742140+00:00",
   "project_root": "/Users/pradeep/Documents/New project/graph-jailbreak-bench",
   "prompt_text_logged": false,
   "proof_dir": "logs/proof",
   "summary": {
     "all_sources_verified": true,
     "commands_all_passed": true,
-    "project_file_count": 168,
+    "project_file_count": 190,
     "real_dataset_rows": 3599,
     "result_table_count": 7,
     "synthetic_source_rows": 0

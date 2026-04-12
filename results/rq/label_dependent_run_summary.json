@@ -1,0 +1,50 @@
+{
+  "commands": [
+    {
+      "command": [
+        "/Users/pradeep/Documents/New project/graph-jailbreak-bench/.venv/bin/python",
+        "scripts/run_rq0_annotation_validation.py"
+      ],
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "{\n  \"annotation_files\": [\n    \"data/annotations/rq0/annotator_a_template.csv\",\n    \"data/annotations/rq0/annotator_b_template.csv\",\n    \"data/annotations/rq0/annotator_c_template.csv\"\n  ],\n  \"blank_rows_by_file\": {\n    \"annotator_a_template.csv\": 200,\n    \"annotator_b_template.csv\": 200,\n    \"annotator_c_template.csv\": 200\n  },\n  \"created_at_utc\": \"2026-04-12T07:30:19.359121+00:00\",\n  \"pairwise_results\": [],\n  \"prompt_text_logged\": false,\n  \"status\": \"blocked_pending_human_annotation\",\n  \"targets\": {\n    \"edge_kappa_min\": 0.6,\n    \"mean_normalized_ged_max\": 0.3,\n    \"node_kappa_min\": 0.7\n  }\n}\n"
+    },
+    {
+      "command": [
+        "/Users/pradeep/Documents/New project/graph-jailbreak-bench/.venv/bin/python",
+        "scripts/run_rq2_transferability_experiments.py",
+        "--dataset",
+        "data/processed/gjb_real_v1.jsonl"
+      ],
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "{\n  \"candidate_rows\": 0,\n  \"created_at_utc\": \"2026-04-12T07:30:20.361718+00:00\",\n  \"dataset\": \"data/processed/gjb_real_v1.jsonl\",\n  \"prompt_text_logged\": false,\n  \"reason\": \"Need at least 50 real paired labels; found 0.\",\n  \"rq\": \"RQ2\",\n  \"source_success_field\": \"model_gpt4_success\",\n  \"source_success_only\": true,\n  \"status\": \"blocked_pending_cross_model_success_labels\",\n  \"target_success_counts\": {},\n  \"target_success_field\": \"model_llama_success\"\n}\n"
+    },
+    {
+      "command": [
+        "/Users/pradeep/Documents/New project/graph-jailbreak-bench/.venv/bin/python",
+        "scripts/run_e5_asr_analysis.py",
+        "--dataset",
+        "data/processed/gjb_real_v1.jsonl"
+      ],
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "{\n  \"created_at_utc\": \"2026-04-12T07:30:20.531868+00:00\",\n  \"dataset\": \"data/processed/gjb_real_v1.jsonl\",\n  \"experiment\": \"E5\",\n  \"labeled_counts_by_type\": {},\n  \"prompt_text_logged\": false,\n  \"reason\": \"No labeled single-turn jailbreak rows found for model_llama_success.\",\n  \"status\": \"blocked_pending_real_multiturn_variants_and_success_labels\",\n  \"success_field\": \"model_llama_success\"\n}\n"
+    },
+    {
+      "command": [
+        "/Users/pradeep/Documents/New project/graph-jailbreak-bench/.venv/bin/python",
+        "scripts/export_rq_results.py",
+        "--dataset",
+        "data/processed/gjb_real_v1.jsonl"
+      ],
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "{\n  \"created_at_utc\": \"2026-04-12T07:30:20.599606+00:00\",\n  \"dataset_enough_for_baseline_runs\": true,\n  \"dataset_enough_for_final_all_rqs\": false,\n  \"dataset_summary\": {\n    \"by_attack_type\": {\n      \"encoding\": 14,\n      \"none\": 600,\n      \"obfuscation\": 187,\n      \"reasoning\": 2072,\n      \"roleplay\": 726\n    },\n    \"by_difficulty\": {\n      \"easy\": 3009,\n      \"hard\": 324,\n      \"medium\": 266\n    },\n    \"by_source_dataset\": {\n      \"AdvBench\": 520,\n      \"HarmBench\": 391,\n      \"JailbreakBench\": 189,\n      \"JailbreakDB-Jailbreak\": 12,\n      \"JailbreakDB-Regular\": 500,\n      \"JailbreakV-28K\": 1687,\n      \"JailbreakV-28K-RedTeam\": 300\n    },\n    \"by_type\": {\n      \"jailbreak\": 2999,\n      \"safe\": 600\n    },\n    \"dataset_path\": \"data/processed/gjb_real_v1.jsonl\",\n    \"model_gpt4_success_labels\": 0,\n    \"model_llama_success_labels\": 0,\n    \"multiturn_rows\": 0,\n    \"prompt_text_logged\": false,\n    \"safe_subgroups\": {\n      \"disinformation\": 10,\n      \"economic_harm\": 10,\n      \"expert_advice\": 10,\n      \"fraud_deception\": 10,\n      \"government_decision_making\": 10,\n      \"harassment_discrimination\": 10,\n      \"jailbreakdb_regular\": 500,\n      \"malware_hacking\": 10,\n      \"physical_harm\": 10,\n      \"privacy\": 10,\n      \"sexual_adult_content\": 10\n    },\n    \"total_rows\": 3599\n  },\n  \"rq_status\": {\n    \"E5\": \"blocked_pending_real_multiturn_variants_and_success_labels\",\n    \"RQ0\": \"blocked_pending_human_annotation\",\n    \"RQ1\": \"baseline_results_available_not_final\",\n    \"RQ2\": \"blocked_pending_cross_model_success_labels\",\n    \"RQ3\": \"frequency_results_available_success_rate_blocked\",\n    \"RQ4\": \"baseline_results_available_safe_grouping_not_final\"\n  },\n  \"why\": [\n    \"The expanded dataset has 3,599 rows, within the workbook's overall target range.\",\n    \"It has 2,999 harmful/jailbreak rows, within the workbook's 2,000-3,000 target range.\",\n    \"It has 600 safe rows, matching the workbook safe-count target.\",\n    \"It still lacks human annotator labels, model success labels, and real multi-turn rows.\"\n  ]\n}\n"
+    }
+  ],
+  "created_at_utc": "2026-04-12T07:30:20.612321+00:00",
+  "dataset": "data/processed/gjb_real_v1.jsonl",
+  "prompt_text_logged": false,
+  "status": "completed"
+}

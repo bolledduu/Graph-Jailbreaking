@@ -3,7 +3,7 @@
     {
       "path": "results/tables/table_10_asr_status.csv",
       "rows_excluding_header": 1,
-      "sha256": "582557ae4a5439ec7816e89736ec032eef6b7aaf013e64f5cccd089fb0e6987b"
+      "sha256": "47b46982d8d82c582e9228291512ae863fde481293aede6db1830942e3e83f94"
     },
     {
       "path": "results/tables/table_2_detection_real.csv",
@@ -13,7 +13,7 @@
     {
       "path": "results/tables/table_3_transferability_status.csv",
       "rows_excluding_header": 1,
-      "sha256": "66e851f0c1dbb52436cd755441da8b89aa5b0b55a908d78f2066a0bfcb0f8d4f"
+      "sha256": "2448ef66ea875ecfceb6ac2ed9a7b5df629574ffa32301e6770ae0c68fb1bec7"
     },
     {
       "path": "results/tables/table_4_top_motifs_real.csv",

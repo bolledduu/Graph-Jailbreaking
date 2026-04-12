@@ -59,6 +59,7 @@ def write_detection_table(rows: list[dict], output_dir: Path) -> None:
         writer = csv.DictWriter(
             handle,
             fieldnames=["model", "difficulty", "n", "accuracy", "precision", "recall", "f1"],
+            lineterminator="\n",
         )
         writer.writeheader()
         for model_name, predictor in methods.items():
@@ -107,7 +108,7 @@ def write_transferability_table(rows: list[dict], output_dir: Path) -> None:
     ]
     output = output_dir / "table_3_transferability_status.csv"
     with output.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=["experiment", "status", "n_labeled", "reason"])
+        writer = csv.DictWriter(handle, fieldnames=["experiment", "status", "n_labeled", "reason"], lineterminator="\n")
         writer.writeheader()
         writer.writerow(
             {
@@ -135,6 +136,7 @@ def write_motif_table(rows: list[dict], output_dir: Path) -> None:
         writer = csv.DictWriter(
             handle,
             fieldnames=["rank", "motif", "frequency", "success_rate", "example_row_id", "example_source"],
+            lineterminator="\n",
         )
         writer.writeheader()
         for rank, (motif, motif_hits) in enumerate(ranked, start=1):
@@ -163,7 +165,7 @@ def write_fairness_table(rows: list[dict], output_dir: Path) -> None:
     }
     output = output_dir / "table_5_fairness_real.csv"
     with output.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=["method", "subgroup", "n", "fpr"])
+        writer = csv.DictWriter(handle, fieldnames=["method", "subgroup", "n", "fpr"], lineterminator="\n")
         writer.writeheader()
         safe_counts = Counter(row.get("safe_subgroup") for row in rows if row["type"] == "safe")
         for method, predictor in methods.items():
@@ -173,7 +175,7 @@ def write_fairness_table(rows: list[dict], output_dir: Path) -> None:
 
     summary_output = output_dir / "table_6_fairness_disparity_real.csv"
     with summary_output.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=["method", "max_min_fpr_gap", "fpr_std_dev"])
+        writer = csv.DictWriter(handle, fieldnames=["method", "max_min_fpr_gap", "fpr_std_dev"], lineterminator="\n")
         writer.writeheader()
         for method, predictor in methods.items():
             predictions = {row["id"]: predictor(row) for row in rows}
@@ -197,7 +199,7 @@ def write_dataset_stats(rows: list[dict], output_dir: Path) -> None:
         "safe_subgroup": Counter(row.get("safe_subgroup") for row in rows if row["type"] == "safe"),
     }
     with output.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=["field", "value", "count"])
+        writer = csv.DictWriter(handle, fieldnames=["field", "value", "count"], lineterminator="\n")
         writer.writeheader()
         for field, counter in counters.items():
             for value, count in sorted(counter.items()):
@@ -212,7 +214,7 @@ def write_asr_table(rows: list[dict], output_dir: Path) -> None:
         if row["type"] in {"jailbreak", "multiturn"} and row.get("model_llama_success") is not None
     ]
     with output.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=["experiment", "status", "n_labeled", "reason"])
+        writer = csv.DictWriter(handle, fieldnames=["experiment", "status", "n_labeled", "reason"], lineterminator="\n")
         writer.writeheader()
         writer.writerow(
             {

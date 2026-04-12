@@ -14,6 +14,8 @@ __pycache__/
 # Do not push raw/processed prompt datasets to the public repo.
 data/raw/
 data/processed/*.jsonl
+data/model_responses/
+data/responses/
 data/**/*.DS_Store
 
 # Cached embedding arrays can be regenerated from scripts/run_e1_embedding_baselines.py.

@@ -45,6 +45,8 @@ Source URLs, row counts, and checksums are recorded in
 - E1 baseline and robustness experiments: completed.
 - RQ3 motif frequency/enrichment: completed without success-rate labels.
 - RQ4 six-group fairness baseline: completed with heuristic subgroup assignment.
+- RQ2 and E5 label-dependent runners: implemented and ready to execute when
+  real success labels are imported.
 
 Blocked items are intentionally not fabricated:
 
@@ -107,6 +109,26 @@ python scripts/run_unblocked_experiments.py \
   --dataset data/processed/gjb_real_v1.jsonl \
   --balanced-dataset data/processed/gjb_real_v1_rq4_balanced.jsonl \
   --output-dir results/unblocked
+```
+
+## Run Label-Dependent Experiments
+
+These commands validate and run the final RQ2/E5 path once real labels exist.
+They safely remain blocked when templates are still blank.
+
+```bash
+python scripts/import_model_labels.py \
+  --dataset data/processed/gjb_real_v1.jsonl \
+  --labels data/annotations/rq2/model_success_template.csv \
+  --output data/processed/gjb_real_v1_with_model_labels.jsonl
+
+python scripts/import_multiturn_variants.py \
+  --dataset data/processed/gjb_real_v1.jsonl \
+  --template data/annotations/e5/multiturn_variants_template.csv \
+  --output data/processed/gjb_real_v1_with_multiturn.jsonl
+
+python scripts/run_label_dependent_experiments.py \
+  --dataset data/processed/gjb_real_v1.jsonl
 ```
 
 ## Proof and Validation

@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import csv
 import json
+import argparse
 from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
@@ -21,9 +22,20 @@ TABLE_DIR = PROJECT_ROOT / "results" / "tables"
 OUTPUT_DIR = PROJECT_ROOT / "results" / "rq"
 
 
+def resolve_project_path(path_text: str) -> Path:
+    path = Path(path_text)
+    return path if path.is_absolute() else PROJECT_ROOT / path
+
+
 def read_csv_dicts(path: Path) -> list[dict[str, str]]:
     with path.open(newline="", encoding="utf-8") as handle:
         return list(csv.DictReader(handle))
+
+
+def read_json_if_exists(path: Path) -> dict | None:
+    if not path.exists():
+        return None
+    return json.loads(path.read_text(encoding="utf-8"))
 
 
 def write_json(path: Path, payload: dict) -> None:
@@ -32,12 +44,18 @@ def write_json(path: Path, payload: dict) -> None:
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--dataset", default=str(DATASET_PATH.relative_to(PROJECT_ROOT)))
+    args = parser.parse_args()
+
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    rows = read_jsonl(DATASET_PATH)
+    dataset_path = resolve_project_path(args.dataset)
+    rows = read_jsonl(dataset_path)
     now = datetime.now(timezone.utc).isoformat()
 
+    dataset_path_text = str(dataset_path.relative_to(PROJECT_ROOT)) if dataset_path.is_relative_to(PROJECT_ROOT) else str(dataset_path)
     dataset_summary = {
-        "dataset_path": str(DATASET_PATH.relative_to(PROJECT_ROOT)),
+        "dataset_path": dataset_path_text,
         "total_rows": len(rows),
         "by_type": dict(sorted(Counter(row["type"] for row in rows).items())),
         "by_source_dataset": dict(sorted(Counter(row["source_dataset"] for row in rows).items())),
@@ -90,19 +108,29 @@ def main() -> int:
         "caveat": "ML baselines use source-derived labels and first-pass heuristic graph annotations. Full-taxonomy graph variants include benign_query/harmful_intent as sanity checks; NoIntent and embedding variants are stricter comparisons.",
         "dataset_summary": dataset_summary,
     }
+    rq2_runner_status = read_json_if_exists(PROJECT_ROOT / "results" / "rq" / "rq2" / "rq2_transferability_status.json")
+    rq2_real_table = PROJECT_ROOT / "results" / "tables" / "table_3_transferability_real.csv"
+    rq2_status = rq2_runner_status.get("status") if rq2_runner_status else "blocked_pending_cross_model_success_labels"
     rq2 = {
         "created_at_utc": now,
         "rq": "RQ2",
         "question": "Do graph-based features generalize better across models for predicting jailbreak success?",
-        "status": "blocked_pending_cross_model_success_labels",
+        "status": rq2_status,
         "result_table": "results/tables/table_3_transferability_status.csv",
         "results": read_csv_dicts(TABLE_DIR / "table_3_transferability_status.csv"),
+        "label_dependent_runner": "scripts/run_rq2_transferability_experiments.py",
         "needed_to_complete": [
             "Collect real Model A success labels.",
             "Collect real Model B success labels.",
             "Train text-feature and graph-feature transfer classifiers.",
         ],
     }
+    if rq2_runner_status:
+        rq2["runner_status"] = rq2_runner_status
+    if rq2_status == "completed" and rq2_real_table.exists():
+        rq2["result_table"] = "results/tables/table_3_transferability_real.csv"
+        rq2["results"] = read_csv_dicts(rq2_real_table)
+        rq2["needed_to_complete"] = []
     rq3 = {
         "created_at_utc": now,
         "rq": "RQ3",
@@ -144,23 +172,36 @@ def main() -> int:
             "Baseline six-group fairness results are available using deterministic heuristic safe-subgroup assignment. "
             "Human review is still recommended before final demographic-adjacent fairness claims."
         )
+    e5_runner_status = read_json_if_exists(PROJECT_ROOT / "results" / "rq" / "e5" / "e5_asr_status.json")
+    e5_real_table = PROJECT_ROOT / "results" / "tables" / "table_10_asr_real.csv"
+    e5_status = e5_runner_status.get("status") if e5_runner_status else "blocked_pending_real_multiturn_variants_and_success_labels"
     e5 = {
         "created_at_utc": now,
         "experiment": "E5",
         "name": "Multi-Turn vs Single-Turn",
-        "status": "blocked_pending_real_multiturn_variants_and_success_labels",
+        "status": e5_status,
         "result_table": "results/tables/table_10_asr_status.csv",
         "results": read_csv_dicts(TABLE_DIR / "table_10_asr_status.csv"),
+        "label_dependent_runner": "scripts/run_e5_asr_analysis.py",
         "needed_to_complete": [
             "Collect or construct real multi-turn variants with provenance.",
             "Run target model evaluations.",
             "Store real attack success labels.",
         ],
     }
+    if e5_runner_status:
+        e5["runner_status"] = e5_runner_status
+    if e5_status == "completed" and e5_real_table.exists():
+        e5["result_table"] = "results/tables/table_10_asr_real.csv"
+        e5["results"] = read_csv_dicts(e5_real_table)
+        e5["needed_to_complete"] = []
     readiness = {
         "created_at_utc": now,
         "dataset_enough_for_baseline_runs": True,
-        "dataset_enough_for_final_all_rqs": False,
+        "dataset_enough_for_final_all_rqs": all(
+            status in {"completed", "passed"}
+            for status in [rq0["status"], rq1["status"], rq2["status"], rq3["status"], rq4["status"], e5["status"]]
+        ),
         "why": [
             "The expanded dataset has 3,599 rows, within the workbook's overall target range.",
             "It has 2,999 harmful/jailbreak rows, within the workbook's 2,000-3,000 target range.",
@@ -194,7 +235,7 @@ def main() -> int:
         "# RQ Results Summary",
         "",
         f"Created UTC: {now}",
-        f"Dataset: {DATASET_PATH.relative_to(PROJECT_ROOT)}",
+        f"Dataset: {dataset_summary['dataset_path']}",
         f"Rows: {dataset_summary['total_rows']}",
         f"By type: {dataset_summary['by_type']}",
         "",

@@ -1,0 +1,17 @@
+{
+  "blank_label_rows": 2999,
+  "created_at_utc": "2026-04-12T07:30:19.127164+00:00",
+  "dataset": "data/processed/gjb_real_v1_with_model_labels.jsonl",
+  "label_file": "data/annotations/rq2/model_success_template.csv",
+  "model_a_success_field": "model_gpt4_success",
+  "model_b_success_field": "model_llama_success",
+  "paired_labeled_attack_rows": 0,
+  "prompt_text_logged": false,
+  "response_text_logged": false,
+  "rows_in_dataset": 3599,
+  "rows_in_label_file": 2999,
+  "rows_with_any_imported_label": 0,
+  "rows_with_partial_imported_label": 0,
+  "status": "blocked_pending_cross_model_success_labels",
+  "target_success_counts": {}
+}

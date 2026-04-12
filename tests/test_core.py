@@ -10,6 +10,7 @@ sys.path.insert(0, str(PROJECT_ROOT / "src"))
 from gjb.graph import enumerate_motifs, graph_depth
 from gjb.metrics import classification_metrics, cohen_kappa, normalized_graph_edit_distance, roc_auc_score
 from gjb.annotation import annotate_prompt
+from gjb.labeling import parse_optional_bool, parse_turns_json, require_unique, sha256_text
 
 
 class CoreTest(unittest.TestCase):
@@ -42,6 +43,25 @@ class CoreTest(unittest.TestCase):
         graph = annotate_prompt("Hypothetical educational request about an exploit", is_harmful=True)
         self.assertIn("hypothetical", graph["graph_nodes"])
         self.assertIn("harmful_intent", graph["graph_nodes"])
+
+    def test_label_bool_parser(self) -> None:
+        self.assertTrue(parse_optional_bool("success"))
+        self.assertFalse(parse_optional_bool("failed"))
+        self.assertIsNone(parse_optional_bool(""))
+        with self.assertRaises(ValueError):
+            parse_optional_bool("maybe")
+
+    def test_turn_parser_accepts_strings_and_role_objects(self) -> None:
+        self.assertEqual(parse_turns_json('["first", "second"]'), ["first", "second"])
+        self.assertEqual(parse_turns_json('[{"role": "user", "content": "hello"}]'), ["hello"])
+        with self.assertRaises(ValueError):
+            parse_turns_json("{}")
+
+    def test_unique_guard_and_hashing(self) -> None:
+        require_unique(["a", "b"], "id")
+        with self.assertRaises(ValueError):
+            require_unique(["a", "a"], "id")
+        self.assertEqual(len(sha256_text("abc")), 64)
 
 
 if __name__ == "__main__":

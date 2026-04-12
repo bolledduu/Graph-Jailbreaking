@@ -1,5 +1,6 @@
 {
-  "created_at_utc": "2026-04-12T03:51:58.902197+00:00",
+  "created_at_utc": "2026-04-12T07:30:20.675942+00:00",
+  "label_dependent_runner": "scripts/run_rq2_transferability_experiments.py",
   "needed_to_complete": [
     "Collect real Model A success labels.",
     "Collect real Model B success labels.",
@@ -11,10 +12,23 @@
     {
       "experiment": "E2 Transferability Prediction",
       "n_labeled": "0",
-      "reason": "Real source CSVs do not include GPT-4/LLaMA success labels.",
+      "reason": "Need at least 50 real paired labels; found 0.",
       "status": "blocked"
     }
   ],
   "rq": "RQ2",
+  "runner_status": {
+    "candidate_rows": 0,
+    "created_at_utc": "2026-04-12T07:30:20.361718+00:00",
+    "dataset": "data/processed/gjb_real_v1.jsonl",
+    "prompt_text_logged": false,
+    "reason": "Need at least 50 real paired labels; found 0.",
+    "rq": "RQ2",
+    "source_success_field": "model_gpt4_success",
+    "source_success_only": true,
+    "status": "blocked_pending_cross_model_success_labels",
+    "target_success_counts": {},
+    "target_success_field": "model_llama_success"
+  },
   "status": "blocked_pending_cross_model_success_labels"
 }

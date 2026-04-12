@@ -12,7 +12,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import numpy as np
-from scipy.sparse import csr_matrix, hstack
+from scipy.sparse import csr_matrix
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score, roc_auc_score
 from sklearn.model_selection import train_test_split
@@ -71,7 +71,7 @@ def load_or_create_embeddings(rows: list[dict], model_name: str, cache_path: Pat
 def write_csv(path: Path, rows: list[dict], fieldnames: list[str]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        writer = csv.DictWriter(handle, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 

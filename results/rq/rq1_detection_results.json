@@ -1,6 +1,6 @@
 {
   "caveat": "ML baselines use source-derived labels and first-pass heuristic graph annotations. Full-taxonomy graph variants include benign_query/harmful_intent as sanity checks; NoIntent and embedding variants are stricter comparisons.",
-  "created_at_utc": "2026-04-12T03:51:58.902197+00:00",
+  "created_at_utc": "2026-04-12T07:30:20.675942+00:00",
   "dataset_summary": {
     "by_attack_type": {
       "encoding": 14,
@@ -130,7 +130,7 @@
     }
   ],
   "embedding_config": {
-    "created_at_utc": "2026-04-12T03:51:44.084648+00:00",
+    "created_at_utc": "2026-04-12T07:29:59.204555+00:00",
     "dataset": "data/processed/gjb_real_v1.jsonl",
     "embedding_cache": "results/rq/rq1/embedding_baseline/sentence-transformers__all-MiniLM-L6-v2_embeddings.npz",
     "hf_home": "/Users/pradeep/Documents/New project/graph-jailbreak-bench/.hf-cache",
@@ -383,7 +383,7 @@
   ],
   "ml_config": {
     "caveat": "Uses source-derived labels and first-pass heuristic graph annotations. Full taxonomy variants include benign_query/harmful_intent and are sanity checks; NoIntent variants exclude those direct intent labels. Suitable for baseline pipeline evidence, not final paper claims.",
-    "created_at_utc": "2026-04-12T03:51:43.063689+00:00",
+    "created_at_utc": "2026-04-12T07:29:57.828473+00:00",
     "dataset": "data/processed/gjb_real_v1.jsonl",
     "models": [
       "Graph-Structural LR",

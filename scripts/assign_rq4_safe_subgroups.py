@@ -13,7 +13,7 @@ import csv
 import json
 import re
 import sys
-from collections import Counter, defaultdict
+from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -161,7 +161,7 @@ def write_audit(path: Path, safe_rows: list[dict], assignments: dict[str, str]) 
             "prompt_char_length",
             *[f"score_{subgroup}" for subgroup in SUBGROUPS],
         ]
-        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        writer = csv.DictWriter(handle, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
         for row in safe_rows:
             scores = score_prompt(row["prompt"])

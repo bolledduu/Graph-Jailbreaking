@@ -12,6 +12,8 @@ models, and paper-grade validation promised in the Excel workbook.
 - Safe rows: 600, matching the workbook target.
 - Synthetic source rows: 0.
 - Baseline experiments can run now.
+- RQ2 and E5 runner code is now implemented and will automatically produce
+  final metrics when real label files are populated.
 - Final paper-grade RQ0/RQ2/E5 still require human annotation, cross-model
   success labels, and real multi-turn rows.
 
@@ -51,6 +53,8 @@ models, and paper-grade validation promised in the Excel workbook.
   `model_llama_success`.
 - Record model name, model version/date, decoding settings, and classifier or
   judge protocol in `metadata`.
+- Import validated labels with `python scripts/import_model_labels.py`.
+- Run transferability with `python scripts/run_rq2_transferability_experiments.py`.
 - Do not fabricate success labels; E2 and E5 remain blocked until these are real.
 
 ## 5. Build the final E1 detection models
@@ -69,6 +73,7 @@ models, and paper-grade validation promised in the Excel workbook.
 - Compare text-feature and graph-feature classifiers.
 - Report accuracy and ROC-AUC.
 - Keep the split grouped by prompt/source to avoid leakage.
+- The executable runner is `scripts/run_rq2_transferability_experiments.py`.
 
 ## 7. Complete E3 motif discovery
 
@@ -88,8 +93,10 @@ models, and paper-grade validation promised in the Excel workbook.
 ## 9. Complete E5 multi-turn analysis
 
 - Generate or collect real multi-turn variants with provenance.
+- Import validated variants with `python scripts/import_multiturn_variants.py`.
 - Run model evaluations on single-turn and multi-turn prompts.
 - Report attack success rate only after real success labels exist.
+- The executable runner is `scripts/run_e5_asr_analysis.py`.
 
 ## 10. Paper-ready packaging
 
