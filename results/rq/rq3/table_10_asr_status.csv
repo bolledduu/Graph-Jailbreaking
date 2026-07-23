@@ -1,0 +1,2 @@
+experiment,status,n_labeled,reason
+E5 Multi-Turn vs Single-Turn ASR,blocked,0,Real source CSVs do not include attack success labels or multi-turn variants.

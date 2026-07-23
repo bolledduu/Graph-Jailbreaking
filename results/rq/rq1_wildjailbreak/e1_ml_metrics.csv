@@ -1,0 +1,25 @@
+model,difficulty,n,accuracy,precision,recall,f1,roc_auc
+Text-Only TFIDF LR,overall,200,0.850000,0.830189,0.880000,0.854369,0.909100
+Text-Only TFIDF LR,easy,0,NA,NA,NA,NA,NA
+Text-Only TFIDF LR,medium,200,0.850000,0.830189,0.880000,0.854369,0.909100
+Text-Only TFIDF LR,hard,0,NA,NA,NA,NA,NA
+Graph-Structural LR,overall,200,0.565000,0.606557,0.370000,0.459627,0.580850
+Graph-Structural LR,easy,0,NA,NA,NA,NA,NA
+Graph-Structural LR,medium,200,0.565000,0.606557,0.370000,0.459627,0.580850
+Graph-Structural LR,hard,0,NA,NA,NA,NA,NA
+Graph-Taxonomy LR,overall,200,0.920000,0.911765,0.930000,0.920792,0.927650
+Graph-Taxonomy LR,easy,0,NA,NA,NA,NA,NA
+Graph-Taxonomy LR,medium,200,0.920000,0.911765,0.930000,0.920792,0.927650
+Graph-Taxonomy LR,hard,0,NA,NA,NA,NA,NA
+Graph-Taxonomy NoIntent LR,overall,200,0.595000,0.637681,0.440000,0.520710,0.638050
+Graph-Taxonomy NoIntent LR,easy,0,NA,NA,NA,NA,NA
+Graph-Taxonomy NoIntent LR,medium,200,0.595000,0.637681,0.440000,0.520710,0.638050
+Graph-Taxonomy NoIntent LR,hard,0,NA,NA,NA,NA,NA
+Hybrid Text+Graph LR,overall,200,0.920000,0.911765,0.930000,0.920792,0.938600
+Hybrid Text+Graph LR,easy,0,NA,NA,NA,NA,NA
+Hybrid Text+Graph LR,medium,200,0.920000,0.911765,0.930000,0.920792,0.938600
+Hybrid Text+Graph LR,hard,0,NA,NA,NA,NA,NA
+Hybrid Text+Graph NoIntent LR,overall,200,0.760000,0.788889,0.710000,0.747368,0.849200
+Hybrid Text+Graph NoIntent LR,easy,0,NA,NA,NA,NA,NA
+Hybrid Text+Graph NoIntent LR,medium,200,0.760000,0.788889,0.710000,0.747368,0.849200
+Hybrid Text+Graph NoIntent LR,hard,0,NA,NA,NA,NA,NA

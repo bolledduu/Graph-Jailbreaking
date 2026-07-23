@@ -1,0 +1,158 @@
+{
+  "annotation_files": [
+    "data\\annotations\\rq0\\annotator_a1_template.csv",
+    "data\\annotations\\rq0\\annotator_b1_template.csv",
+    "data\\annotations\\rq0\\annotator_d1_template.csv"
+  ],
+  "annotator_models": {
+    "annotator_a1_template": {
+      "model": "gemini-3.1-flash-lite",
+      "provider": "gemini",
+      "run_metadata": "llm_annotation_run_a1.json"
+    },
+    "annotator_b1_template": {
+      "model": "gpt-oss-120b",
+      "provider": "cerebras",
+      "run_metadata": "llm_annotation_run_b1.json"
+    },
+    "annotator_d1_template": {
+      "model": "zai-glm-4.7",
+      "provider": "cerebras",
+      "run_metadata": "llm_annotation_run_d1.json"
+    }
+  },
+  "blank_rows_by_file": {
+    "annotator_a1_template.csv": 11,
+    "annotator_b1_template.csv": 3,
+    "annotator_d1_template.csv": 5
+  },
+  "created_at_utc": "2026-06-24T07:43:54.595895+00:00",
+  "joint_agreement": {
+    "annotators": [
+      "annotator_a1_template",
+      "annotator_b1_template",
+      "annotator_d1_template"
+    ],
+    "edge_direction_agreement_mean": 0.9859098966929519,
+    "edge_f1_directed_mean": 0.6406521985935022,
+    "edge_f1_presence_mean": 0.6499495492599495,
+    "mean_edge_jaccard_mean": 0.7733510904048063,
+    "mean_normalized_ged_mean": 0.2078522178048775,
+    "node_krippendorff_alpha_overall": 0.8509658628517582,
+    "node_krippendorff_alpha_per_label": {
+      "authority_claim": 0.288,
+      "benign_query": 0.7296,
+      "context_shift": 0.2897,
+      "emotional_manipulation": 0.6022,
+      "fiction": 0.8382,
+      "gradual_escalation": 0.0,
+      "harmful_intent": 0.7511,
+      "hypothetical": 0.7434,
+      "indirect_request": 0.0,
+      "instruction_override": 0.9783,
+      "obfuscation": 0.615,
+      "roleplay": 0.8887
+    },
+    "node_labels_excluded_no_support": []
+  },
+  "pairwise_results": [
+    {
+      "annotator_pair": [
+        "annotator_a1_template",
+        "annotator_b1_template"
+      ],
+      "edge_direction_agreement": 1.0,
+      "edge_f1_directed": 0.6093023255813953,
+      "edge_f1_presence": 0.6093023255813953,
+      "mean_edge_jaccard": 0.7622717187233317,
+      "mean_node_kappa": 0.5919862840235675,
+      "mean_normalized_ged": 0.22648523817878655,
+      "node_labels_excluded_no_support": [
+        "gradual_escalation"
+      ],
+      "node_labels_scored": 11,
+      "per_label_node_kappa": {
+        "authority_claim": 0.2986,
+        "benign_query": 0.6788,
+        "context_shift": 0.3118,
+        "emotional_manipulation": 0.6214,
+        "fiction": 0.8242,
+        "harmful_intent": 0.7113,
+        "hypothetical": 0.719,
+        "indirect_request": 0.0,
+        "instruction_override": 0.9768,
+        "obfuscation": 0.4918,
+        "roleplay": 0.8782
+      },
+      "shared_rows": 186
+    },
+    {
+      "annotator_pair": [
+        "annotator_a1_template",
+        "annotator_d1_template"
+      ],
+      "edge_direction_agreement": 0.9699248120300752,
+      "edge_f1_directed": 0.6262135922330098,
+      "edge_f1_presence": 0.6456310679611651,
+      "mean_edge_jaccard": 0.7738375603864734,
+      "mean_node_kappa": 0.6592678551091217,
+      "mean_normalized_ged": 0.1946863824581216,
+      "node_labels_excluded_no_support": [
+        "indirect_request"
+      ],
+      "node_labels_scored": 11,
+      "per_label_node_kappa": {
+        "authority_claim": 0.2175,
+        "benign_query": 0.8389,
+        "context_shift": 0.2806,
+        "emotional_manipulation": 0.666,
+        "fiction": 0.8943,
+        "gradual_escalation": 0.0,
+        "harmful_intent": 0.8389,
+        "hypothetical": 0.7944,
+        "instruction_override": 0.9647,
+        "obfuscation": 0.8516,
+        "roleplay": 0.905
+      },
+      "shared_rows": 184
+    },
+    {
+      "annotator_pair": [
+        "annotator_b1_template",
+        "annotator_d1_template"
+      ],
+      "edge_direction_agreement": 0.9878048780487805,
+      "edge_f1_directed": 0.6864406779661016,
+      "edge_f1_presence": 0.6949152542372882,
+      "mean_edge_jaccard": 0.7839439921046139,
+      "mean_node_kappa": 0.5867643686614296,
+      "mean_normalized_ged": 0.20238503277772435,
+      "node_labels_excluded_no_support": [
+        "indirect_request"
+      ],
+      "node_labels_scored": 11,
+      "per_label_node_kappa": {
+        "authority_claim": 0.3413,
+        "benign_query": 0.6544,
+        "context_shift": 0.3609,
+        "emotional_manipulation": 0.6123,
+        "fiction": 0.8137,
+        "gradual_escalation": 0.0,
+        "harmful_intent": 0.6937,
+        "hypothetical": 0.7193,
+        "instruction_override": 0.9893,
+        "obfuscation": 0.3899,
+        "roleplay": 0.8796
+      },
+      "shared_rows": 193
+    }
+  ],
+  "prompt_text_logged": false,
+  "rows_completed_by_all": 182,
+  "status": "passed",
+  "targets": {
+    "edge_f1_directed_min": 0.6,
+    "mean_normalized_ged_max": 0.3,
+    "node_alpha_min": 0.667
+  }
+}

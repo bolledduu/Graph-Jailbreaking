@@ -1,0 +1,32 @@
+{
+  "annotator_type": "llm",
+  "created_at_utc": "2026-06-23T04:06:56.303294+00:00",
+  "limit": null,
+  "prompts_file": "data\\annotations\\rq0\\rq0_sample_prompts_local.csv",
+  "runs": [
+    {
+      "annotator": "annotator_b1",
+      "failures": [
+        {
+          "error": "Failed after 3 attempts for harmbench_0274: node_labels_json and edge_list_json must be lists",
+          "id": "harmbench_0274"
+        },
+        {
+          "error": "Failed after 3 attempts for jailbreakv28k_24473: 429 Client Error: Too Many Requests for url: https://api.cerebras.ai/v1/chat/completions",
+          "id": "jailbreakv28k_24473"
+        },
+        {
+          "error": "Failed after 3 attempts for jailbreakv28k_27867: node_labels_json and edge_list_json must be lists",
+          "id": "jailbreakv28k_27867"
+        }
+      ],
+      "model": "gpt-oss-120b",
+      "provider": "cerebras",
+      "rows_newly_annotated": 197,
+      "rows_skipped_existing": 0,
+      "rows_targeted": 200,
+      "template": "data\\annotations\\rq0\\annotator_b1_template.csv"
+    }
+  ],
+  "temperature": 0.0
+}

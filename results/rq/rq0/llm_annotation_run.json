@@ -1,0 +1,19 @@
+{
+  "annotator_type": "llm",
+  "created_at_utc": "2026-06-10T07:01:16.613744+00:00",
+  "limit": 2,
+  "prompts_file": "data\\annotations\\rq0\\rq0_sample_prompts_local.csv",
+  "runs": [
+    {
+      "annotator": "annotator_a",
+      "failures": [],
+      "model": "gemini-2.5-flash-lite",
+      "provider": "gemini",
+      "rows_newly_annotated": 2,
+      "rows_skipped_existing": 0,
+      "rows_targeted": 2,
+      "template": "data\\annotations\\rq0\\annotator_a_template.csv"
+    }
+  ],
+  "temperature": 0.0
+}
