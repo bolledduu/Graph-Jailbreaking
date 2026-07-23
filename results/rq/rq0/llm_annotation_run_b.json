@@ -1,0 +1,14 @@
+{
+  "annotator_type": "llm",
+  "created_at_utc": "2026-06-11T04:38:31.661503+00:00",
+  "note": "Reconstructed: annotator_b runs were interrupted (rate-limit thrashing) before end-of-run metadata could be written. Model/provider are accurate; per-run counts are not captured.",
+  "runs": [
+    {
+      "annotator": "annotator_b",
+      "model": "llama-3.3-70b-versatile",
+      "provider": "groq",
+      "rows_filled_final": 161,
+      "template": "data/annotations/rq0/annotator_b_template.csv"
+    }
+  ]
+}

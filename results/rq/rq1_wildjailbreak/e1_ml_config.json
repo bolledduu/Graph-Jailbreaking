@@ -1,7 +1,7 @@
 {
   "caveat": "Uses source-derived labels and first-pass heuristic graph annotations. Full taxonomy variants include benign_query/harmful_intent and are sanity checks; NoIntent variants exclude those direct intent labels. Suitable for baseline pipeline evidence, not final paper claims.",
-  "created_at_utc": "2026-07-02T02:43:15.505020+00:00",
-  "dataset": "data/processed/gjb_real_v1_graphs.jsonl",
+  "created_at_utc": "2026-07-15T23:29:36.722299+00:00",
+  "dataset": "data/processed/wildjailbreak_500x500.jsonl",
   "models": [
     "Graph-Structural LR",
     "Graph-Taxonomy LR",
@@ -10,10 +10,10 @@
     "Hybrid Text+Graph NoIntent LR",
     "Text-Only TFIDF LR"
   ],
-  "output_dir": "results/rq/rq1",
+  "output_dir": "results/rq/rq1_wildjailbreak",
   "prompt_text_logged": false,
   "seed": 30,
-  "test_rows": 720,
+  "test_rows": 200,
   "test_size": 0.2,
-  "train_rows": 2879
+  "train_rows": 800
 }

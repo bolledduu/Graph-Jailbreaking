@@ -14,9 +14,19 @@ __pycache__/
 # Do not push raw/processed prompt datasets to the public repo.
 data/raw/
 data/processed/*.jsonl
+data/annotations/rq0/rq0_sample_prompts_local.csv
+.env.local
 data/model_responses/
 data/responses/
 data/**/*.DS_Store
 
 # Cached embedding arrays can be regenerated from scripts/run_e1_embedding_baselines.py.
 results/rq/rq1/embedding_baseline/*.npz
+
+# Model attack responses contain harmful generations -> never push to public repo.
+results/**/*responses*.jsonl
+data/attack_responses/
+
+# Run logs (noisy; may embed prompt text) and local binary docs.
+logs/
+*.docx

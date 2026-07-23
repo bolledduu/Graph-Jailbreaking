@@ -1,0 +1,28 @@
+{
+  "annotator_type": "llm",
+  "created_at_utc": "2026-06-10T08:44:37.288205+00:00",
+  "limit": null,
+  "prompts_file": "data\\annotations\\rq0\\rq0_sample_prompts_local.csv",
+  "runs": [
+    {
+      "annotator": "annotator_a",
+      "failures": [
+        {
+          "error": "Failed after 3 attempts for jailbreakv28k_02167: 'candidates'",
+          "id": "jailbreakv28k_02167"
+        },
+        {
+          "error": "Failed after 3 attempts for jailbreakv28k_08212: 'candidates'",
+          "id": "jailbreakv28k_08212"
+        }
+      ],
+      "model": "gemini-3.1-flash-lite",
+      "provider": "gemini",
+      "rows_newly_annotated": 7,
+      "rows_skipped_existing": 191,
+      "rows_targeted": 200,
+      "template": "data\\annotations\\rq0\\annotator_a_template.csv"
+    }
+  ],
+  "temperature": 0.0
+}

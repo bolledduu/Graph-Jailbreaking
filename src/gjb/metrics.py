@@ -106,6 +106,46 @@ def cohen_kappa(labels_a: list[str], labels_b: list[str]) -> float:
     return (observed - expected) / (1 - expected)
 
 
+def krippendorff_alpha_nominal(units: list[list]) -> float | None:
+    """Krippendorff's alpha for nominal data with any number of raters.
+
+    ``units`` is a list of items; each item is the list of values assigned by
+    the raters who labeled it (length = number of raters who rated that item).
+    Items with fewer than 2 ratings are ignored (they carry no agreement info),
+    so this tolerates missing/partial coverage across raters.
+
+    Returns None when nothing can be scored (no item has >=2 ratings).
+    """
+    coincidence: Counter = Counter()
+    for values in units:
+        m = len(values)
+        if m < 2:
+            continue
+        counts = Counter(values)
+        for c in counts:
+            for k in counts:
+                if c == k:
+                    coincidence[(c, k)] += counts[c] * (counts[c] - 1) / (m - 1)
+                else:
+                    coincidence[(c, k)] += counts[c] * counts[k] / (m - 1)
+    if not coincidence:
+        return None
+    values_seen = {v for pair in coincidence for v in pair}
+    marginals = {v: sum(coincidence[(v, k)] for k in values_seen) for v in values_seen}
+    total = sum(marginals.values())
+    if total <= 1 or len(values_seen) < 2:
+        return 1.0  # everyone agreed on a single value -> perfect agreement
+    observed_disagreement = sum(
+        coincidence[(c, k)] for c in values_seen for k in values_seen if c != k
+    )
+    expected_disagreement = sum(
+        marginals[c] * marginals[k] for c in values_seen for k in values_seen if c != k
+    ) / (total - 1)
+    if expected_disagreement == 0:
+        return 1.0
+    return 1 - (observed_disagreement / expected_disagreement)
+
+
 def normalized_graph_edit_distance(graph_a: dict, graph_b: dict) -> float:
     nodes_a = set(graph_a.get("nodes", []))
     nodes_b = set(graph_b.get("nodes", []))

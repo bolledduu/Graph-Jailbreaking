@@ -1,0 +1,11 @@
+rank,motif,frequency,success_rate,example_row_id,example_source
+1,"nodes:harmful_intent,instruction_override|edges:instruction_override>harmful_intent",1065,NA,jailbreakv28k_00019,JailbreakV-28K
+2,"nodes:instruction_override,roleplay|edges:roleplay>instruction_override",924,NA,jailbreakv28k_00051,JailbreakV-28K
+3,"nodes:harmful_intent,instruction_override,roleplay|edges:instruction_override>harmful_intent,roleplay>instruction_override",877,NA,jailbreakv28k_00051,JailbreakV-28K
+4,"nodes:context_shift,harmful_intent|edges:context_shift>harmful_intent",318,NA,jbb_harmful_0027,JailbreakBench
+5,"nodes:context_shift,harmful_intent,instruction_override|edges:context_shift>harmful_intent,instruction_override>harmful_intent",249,NA,jailbreakv28k_00019,JailbreakV-28K
+6,"nodes:fiction,harmful_intent|edges:fiction>harmful_intent",213,NA,advbench_0122,AdvBench
+7,"nodes:fiction,harmful_intent,instruction_override|edges:fiction>harmful_intent,instruction_override>harmful_intent",195,NA,jailbreakv28k_00256,JailbreakV-28K
+8,"nodes:context_shift,instruction_override,roleplay|edges:roleplay>instruction_override",194,NA,jailbreakv28k_00098,JailbreakV-28K
+9,"nodes:emotional_manipulation,harmful_intent|edges:emotional_manipulation>harmful_intent",193,NA,jbb_harmful_0065,JailbreakBench
+10,"nodes:context_shift,harmful_intent,roleplay|edges:context_shift>harmful_intent",181,NA,jailbreakv28k_00098,JailbreakV-28K
