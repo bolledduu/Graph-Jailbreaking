@@ -1,0 +1,13 @@
+group,model,n,successes,success_rate,ci95_low,ci95_high
+A_roleplay_no_override,gemma-4-31b,99,37,0.3737,0.2848,0.4721
+A_roleplay_no_override,llama-3.3-70b,99,89,0.899,0.824,0.9442
+A_roleplay_no_override,gpt-oss-20b,99,13,0.1313,0.0784,0.2118
+B_star_roleplay_to_goal,gemma-4-31b,23,3,0.1304,0.0454,0.3213
+B_star_roleplay_to_goal,llama-3.3-70b,23,14,0.6087,0.4079,0.7784
+B_star_roleplay_to_goal,gpt-oss-20b,23,1,0.0435,0.0077,0.2099
+C_chained_roleplay_to_io,gemma-4-31b,116,16,0.1379,0.0867,0.2124
+C_chained_roleplay_to_io,llama-3.3-70b,116,85,0.7328,0.6457,0.8049
+C_chained_roleplay_to_io,gpt-oss-20b,116,4,0.0345,0.0135,0.0853
+D_both_edges,gemma-4-31b,9,3,0.3333,0.1206,0.6458
+D_both_edges,llama-3.3-70b,9,8,0.8889,0.565,0.9801
+D_both_edges,gpt-oss-20b,9,0,0.0,0.0,0.2992
