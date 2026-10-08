@@ -15,13 +15,18 @@ __pycache__/
 data/raw/
 data/processed/*.jsonl
 data/annotations/rq0/rq0_sample_prompts_local.csv
+# Blank prompt_text column, but metadata still carries AdvBench target strings
+# and absolute local paths.
+data/annotations/rq0/rq0_sample_prompts.csv
 .env.local
 data/model_responses/
 data/responses/
 data/**/*.DS_Store
 
-# Cached embedding arrays can be regenerated from scripts/run_e1_embedding_baselines.py.
+# Cached embedding arrays can be regenerated from scripts/run_e1_embedding_baselines.py
+# and scripts/run_rq2_hybrid.py.
 results/rq/rq1/embedding_baseline/*.npz
+results/rq/rq2/*.npy
 
 # Model attack responses contain harmful generations -> never push to public repo.
 results/**/*responses*.jsonl
@@ -30,3 +35,8 @@ data/attack_responses/
 # Run logs (noisy; may embed prompt text) and local binary docs.
 logs/
 *.docx
+
+# Paper drafts live in Overleaf. The repo is public and under a real name, while
+# the submission is anonymous -- committing drafts would de-anonymise it.
+*.pdf
+docs/paper_*.tex

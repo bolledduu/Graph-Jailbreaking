@@ -1,0 +1,22 @@
+{
+  "annotator": "cerebras:gpt-oss-120b:goalsink",
+  "created_at_utc": "2026-07-15T19:05:35.219946+00:00",
+  "dataset": "data/processed/wildjailbreak_500x500.jsonl",
+  "failures": [
+    {
+      "error": "Failed after 3 attempts for wj_benign_0105: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))",
+      "id": "wj_benign_0105"
+    },
+    {
+      "error": "Failed after 3 attempts for wj_benign_0176: 429 Client Error: Too Many Requests for url: https://api.cerebras.ai/v1/chat/completions",
+      "id": "wj_benign_0176"
+    },
+    {
+      "error": "Failed after 3 attempts for wj_harmful_0244: HTTPSConnectionPool(host='api.cerebras.ai', port=443): Max retries exceeded with url: /v1/chat/completions (Caused by NameResolutionError(\"HTTPSConnection(host='api.cerebras.ai', port=443): Failed to resolve 'api.cerebras.ai' ([Errno 11001] getaddrinfo failed)\"))",
+      "id": "wj_harmful_0244"
+    }
+  ],
+  "jailbreak_annotated_total": 997,
+  "newly_annotated_this_run": 997,
+  "output": "data/processed/wildjailbreak_500x500.jsonl"
+}

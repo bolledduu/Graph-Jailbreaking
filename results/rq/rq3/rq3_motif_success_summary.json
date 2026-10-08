@@ -1,0 +1,27 @@
+{
+  "attack_subset_rows": 500,
+  "base_success_rates": {
+    "gemma-4-31b": 0.198,
+    "gpt-oss-20b": 0.104,
+    "llama-3.3-70b": 0.754
+  },
+  "caveats": [
+    "Success rates come from the 500-prompt multi-node attack subset; bare single-node prompts are absent, so the frequency and success tables cover different motif populations.",
+    "The attack subset is structure-balanced and embedding-deduped, not frequency-proportional. Do not multiply these success rates by the frequency counts to estimate population-level harm.",
+    "Rank by lift over each model's base rate; raw rates are not comparable across targets with 10/20/75 percent base rates.",
+    "Coverage is a set union over prompts; motifs co-occur, so summing per-motif counts would double-count.",
+    "Raw edge comparisons are confounded by node presence; see motif_topology_control.csv, which holds instruction_override constant and varies only the topology.",
+    "motif_frequency_current.csv counts WHOLE-GRAPH signatures (one per prompt). The older table_4_top_motifs_real.csv counts ENUMERATED SUB-MOTIFS, so a sub-pattern is credited to every graph containing it. The two are different units and their counts are not comparable; neither supersedes the other."
+  ],
+  "frequency_annotated_rows": 3495,
+  "min_count_floor": 10,
+  "permissive_model_for_transfer": "llama-3.3-70b",
+  "prompt_text_logged": false,
+  "rq": "RQ3",
+  "status": "success_ranking_computed",
+  "targets": [
+    "gemma-4-31b",
+    "llama-3.3-70b",
+    "gpt-oss-20b"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "annotator": "cerebras:gpt-oss-120b:A1B",
+  "created_at_utc": "2026-07-01T23:32:01.345415+00:00",
+  "dataset": "data/processed/gjb_real_v1.jsonl",
+  "failures": [
+    {
+      "error": "Failed after 3 attempts for harmbench_0278: node_labels_json and edge_list_json must be lists",
+      "id": "harmbench_0278"
+    },
+    {
+      "error": "Failed after 3 attempts for jailbreakv28k_24473: node_labels_json and edge_list_json must be lists",
+      "id": "jailbreakv28k_24473"
+    },
+    {
+      "error": "Failed after 3 attempts for jailbreakv_redteam_00003: node_labels_json and edge_list_json must be lists",
+      "id": "jailbreakv_redteam_00003"
+    }
+  ],
+  "jailbreak_annotated_total": 2996,
+  "newly_annotated_this_run": 11,
+  "output": "data/processed/gjb_real_v1_graphs.jsonl"
+}
